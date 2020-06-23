@@ -8,7 +8,7 @@ public class BD_Recetas extends SQLiteOpenHelper {
 
 
     public BD_Recetas(Context context, String nombre, SQLiteDatabase.CursorFactory cursorFactory, int version) {
-       super(context, nombre, cursorFactory, 1);
+       super(context, nombre, cursorFactory, R.integer.DBVersion);
    }
     @Override
     public void onCreate(SQLiteDatabase db) {

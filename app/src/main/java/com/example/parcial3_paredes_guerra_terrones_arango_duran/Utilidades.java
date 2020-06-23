@@ -9,7 +9,9 @@ public class Utilidades {
     public static final String CAMPO_PASS = "password";
     public static final String CAMPO_TYPE = "type";
 
-    public static final String CREAR_TABLA_USERS = "CREATE TABLE"+ TABLA_USERS + "(" + CAMPO_NAME + "TEXT," + CAMPO_ID + " INTEGER PRIMARY KEY," + CAMPO_EMAIL + "TEXT,"+ CAMPO_PASS + "TEXT," + CAMPO_TYPE+ "TEXT)";
+    public static final String CREAR_TABLA_USERS = "CREATE TABLE"+ TABLA_USERS + "(" + CAMPO_NAME + "TEXT," + CAMPO_ID
+            + " INTEGER PRIMARY KEY," + CAMPO_EMAIL + "TEXT,"+ CAMPO_PASS + "TEXT," + CAMPO_TYPE+ "TEXT)";
+
 
     // Constantes table recipes
     public static final String TABLA_RECIPES = "recipes";
@@ -20,7 +22,8 @@ public class Utilidades {
     public static final String CAMPO_Restaurant= "restaurant";
     public static final String CAMPO_Comments = "comments";
 
-    public static final String CREAR_TABLA_RECIPES = "CREATE TABLE"+ TABLA_RECIPES + "(" + CAMPO_Name + "TEXT," + CAMPO_IdRecipes+ " INTEGER PRIMARY KEY," + CAMPO_Description + "TEXT,"+ CAMPO_Ingredients + "TEXT," + CAMPO_Restaurant+ "TEXT," + CAMPO_Comments + "TEXT)";
+    public static final String CREAR_TABLA_RECIPES = "CREATE TABLE"+ TABLA_RECIPES + "(" + CAMPO_Name + "TEXT," + CAMPO_IdRecipes+ " INTEGER PRIMARY KEY,"
+            + CAMPO_Description + "TEXT,"+ CAMPO_Ingredients + "TEXT," + CAMPO_Restaurant+ "TEXT," + CAMPO_Comments + "TEXT)";
 
 
 }

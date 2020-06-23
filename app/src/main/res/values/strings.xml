@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Parcial3_Paredes_Guerra_Terrones_Arango_Duran</string>
+    <integer name="DBVersion">1</integer>
 </resources>

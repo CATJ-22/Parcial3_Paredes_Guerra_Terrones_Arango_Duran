@@ -1,4 +1,4 @@
-package com.example.parcial3_paredes_guerra_terrones_arango_duran;
+package com.example.parcial3_paredes_guerra_terrones_arango_duran.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.example.parcial3_paredes_guerra_terrones_arango_duran.BD_Recetas;
+import com.example.parcial3_paredes_guerra_terrones_arango_duran.R;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -17,6 +17,9 @@ public class Recipes implements Serializable {
     }
     public Recipes(String name,String id_recipes, String description, String ingredients, String restaurant, String comments){
         this.name = name;
+        /*Kiriam para el id_recipes, como debo yo de guardar ese tema de la imagen.
+        * Osea tu tienes un String, pero no comprendo que dato debo yo de pedir para
+        * guardar en mi espacio*/
         this.id_recipes =id_recipes;
         this.description = description;
         this.ingredients =ingredients;
