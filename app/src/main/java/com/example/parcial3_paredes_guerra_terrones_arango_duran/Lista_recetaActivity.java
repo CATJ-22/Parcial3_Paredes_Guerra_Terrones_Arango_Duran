@@ -4,10 +4,10 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Lista_receta extends AppCompatActivity {
+public class Lista_recetaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_lista_receta);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_lista_receta);
     }
 }
