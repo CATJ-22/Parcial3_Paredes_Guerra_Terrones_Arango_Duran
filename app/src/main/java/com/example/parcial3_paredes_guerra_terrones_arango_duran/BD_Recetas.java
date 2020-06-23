@@ -7,7 +7,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class BD_Recetas extends SQLiteOpenHelper {
 
 
-
     public BD_Recetas(Context context, String nombre, SQLiteDatabase.CursorFactory cursorFactory, int version) {
        super(context, nombre, cursorFactory, 1);
    }
