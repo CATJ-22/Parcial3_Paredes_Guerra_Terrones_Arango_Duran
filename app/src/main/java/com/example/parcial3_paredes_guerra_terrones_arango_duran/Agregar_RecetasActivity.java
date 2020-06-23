@@ -10,5 +10,5 @@ public class Agregar_RecetasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar__recetas);
-    }
+    } //HOLO
 }
