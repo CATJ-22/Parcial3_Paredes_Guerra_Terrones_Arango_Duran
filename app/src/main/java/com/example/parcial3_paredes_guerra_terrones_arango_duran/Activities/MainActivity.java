@@ -41,6 +41,9 @@ public class MainActivity extends AppCompatActivity {
         try {
             RecetasBDHelper smDB = new RecetasBDHelper(this, "Users", null, 1);
             SQLiteDatabase db = smDB.getWritableDatabase();
+            if(db != null){
+                db.execSQL("INSERT INTO Users (name, email, pass, type)"+ "VALUES ('zamora','zamora@example.com','123','Administrador')");
+            }
         } catch (Exception e) {
 
         }
@@ -78,5 +81,6 @@ public class MainActivity extends AppCompatActivity {
         }catch (Exception e){
 
         }
+
     }
 }
