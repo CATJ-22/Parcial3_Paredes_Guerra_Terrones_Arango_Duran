@@ -21,7 +21,6 @@ public class LoginActivity extends AppCompatActivity {
 
     public void cargarVariables(){
         nombre = (EditText) findViewById(R.id.TextPersonName);
-
     }
 
     public void mainmenu (View view){
