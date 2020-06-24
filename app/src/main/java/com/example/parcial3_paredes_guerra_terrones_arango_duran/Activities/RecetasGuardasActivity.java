@@ -44,6 +44,9 @@ public class RecetasGuardasActivity extends AppCompatActivity {
         listview_adapter adapter= new listview_adapter(getApplicationContext(), receta);
         lista.setAdapter(adapter);
 
+
+        //hola
+
     }
 
 }
