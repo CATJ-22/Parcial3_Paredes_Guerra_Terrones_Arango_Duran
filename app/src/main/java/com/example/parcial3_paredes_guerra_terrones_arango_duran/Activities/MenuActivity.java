@@ -7,9 +7,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MenuActivity extends AppCompatActivity {
-    String tipo="normal";
+    String tipo="";
     Button boton;
 
     @Override
@@ -18,6 +19,11 @@ public class MenuActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
 
         boton=(Button)findViewById(R.id.btagrerece);
+        try {
+
+        }catch (Exception e){
+            Toast.makeText(getApplicationContext(),"Errorsote: "+e.getMessage().toString(),Toast.LENGTH_SHORT).show();
+        }
 
         if(tipo.equals("normal")){
             boton.setVisibility(View.INVISIBLE);

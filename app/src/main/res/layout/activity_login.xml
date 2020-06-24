@@ -12,6 +12,7 @@ android:background="@drawable/bgloginymenu">
         android:layout_width="141dp"
         android:layout_height="48dp"
         android:text="Iniciar Seción"
+        android:onClick="mainmenu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
