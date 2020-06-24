@@ -35,9 +35,8 @@ public class MenuActivity extends AppCompatActivity {
                 tipo = c.getString(0);
             }
 
-            Toast.makeText(getApplicationContext(),tipo,Toast.LENGTH_LONG).show();
         }catch (Exception e){
-            Toast.makeText(getApplicationContext(),"Errorsote: "+e.getMessage().toString(),Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"Errorsote: "+e.getMessage(),Toast.LENGTH_LONG).show();
         }
 
         if(tipo.equals("normal")){
