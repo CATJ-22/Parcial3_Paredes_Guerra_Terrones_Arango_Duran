@@ -46,7 +46,7 @@ android:background="@drawable/bgloginymenu">
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/TextPersonName"
         android:layout_width="214dp"
         android:layout_height="44dp"
         android:background="#E2F8F8F8"
@@ -67,7 +67,7 @@ android:background="@drawable/bgloginymenu">
         android:textColor="#000000"
         android:textSize="20dp"
         android:textStyle="bold|"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/TextPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.293"
         app:layout_constraintStart_toStartOf="parent"

@@ -10,17 +10,18 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MenuActivity extends AppCompatActivity {
-    String tipo="";
+    String tipo="", name="";
     Button boton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-
+        name = getIntent().getStringExtra("nom");
         boton=(Button)findViewById(R.id.btagrerece);
-        try {
 
+        try{
+        //traer tipo de usuario desde base de datos
         }catch (Exception e){
             Toast.makeText(getApplicationContext(),"Errorsote: "+e.getMessage().toString(),Toast.LENGTH_SHORT).show();
         }
