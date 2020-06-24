@@ -11,13 +11,12 @@ android:background="@drawable/bgloginymenu">
         android:id="@+id/buttonlog"
         android:layout_width="141dp"
         android:layout_height="48dp"
-        android:layout_marginTop="308dp"
         android:text="Iniciar Seción"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.224" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+        app:layout_constraintVertical_bias="0.09" />
 
     <Button
         android:id="@+id/buttonreg"
@@ -28,7 +27,7 @@ android:background="@drawable/bgloginymenu">
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonlog"
-        app:layout_constraintVertical_bias="0.065" />
+        app:layout_constraintVertical_bias="0.051" />
 
     <TextView
         android:id="@+id/textView"
