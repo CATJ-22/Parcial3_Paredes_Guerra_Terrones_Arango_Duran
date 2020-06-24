@@ -32,7 +32,7 @@ public class MenuActivity extends AppCompatActivity {
             SQLiteDatabase db = Datos.getReadableDatabase();
             Cursor c = db.rawQuery(" SELECT type FROM Users WHERE name='"+name+"'", null);
             tipo = c.getString(0);
-
+            Toast.makeText(getApplicationContext(),tipo,Toast.LENGTH_LONG).show();
         }catch (Exception e){
             Toast.makeText(getApplicationContext(),"Errorsote: "+e.getMessage().toString(),Toast.LENGTH_LONG).show();
         }
