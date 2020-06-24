@@ -7,64 +7,86 @@ android:layout_height="match_parent"
 tools:context=".Activities.LoginActivity"
 android:background="@drawable/bglogin">
 
-<Button
-    android:id="@+id/buttonlog"
-    android:layout_width="141dp"
-    android:layout_height="48dp"
-    android:text="Iniciar Seción"
-    tools:layout_editor_absoluteX="135dp"
-    tools:layout_editor_absoluteY="397dp"
-    tools:ignore="MissingConstraints" />
+    <Button
+        android:id="@+id/buttonlog"
+        android:layout_width="141dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="308dp"
+        android:text="Iniciar Seción"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.224"
+        tools:ignore="MissingConstraints" />
 
-<Button
-    android:id="@+id/buttonreg"
-    android:layout_width="141dp"
-    android:layout_height="48dp"
-    android:text="Registrarte"
-    tools:layout_editor_absoluteX="135dp"
-    tools:layout_editor_absoluteY="470dp"
-    tools:ignore="MissingConstraints" />
+    <Button
+        android:id="@+id/buttonreg"
+        android:layout_width="141dp"
+        android:layout_height="48dp"
+        android:text="Registrarte"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonlog"
+        app:layout_constraintVertical_bias="0.065"
+        tools:ignore="MissingConstraints" />
 
-<TextView
-    android:id="@+id/textView"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Contraseña"
-    android:textSize="20dp"
-    android:textStyle="bold"
-    tools:layout_editor_absoluteX="100dp"
-    tools:layout_editor_absoluteY="302dp"
-    tools:ignore="MissingConstraints" />
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contraseña"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.325"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.428"
+        tools:ignore="MissingConstraints" />
 
-<EditText
-    android:id="@+id/editTextTextPersonName"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:ems="10"
-    tools:layout_editor_absoluteX="100dp"
-    tools:layout_editor_absoluteY="238dp"
-    tools:ignore="MissingConstraints" />
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
 
-<TextView
-    android:id="@+id/textView2"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Usuario"
-    android:textSize="20dp"
-    android:textStyle="bold"
-    tools:ignore="MissingConstraints"
-    tools:layout_editor_absoluteX="100dp"
-    tools:layout_editor_absoluteY="211dp" />
+        android:ems="10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.346" />
 
-<EditText
-    android:id="@+id/editTextTextPassword"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:ems="10"
-    android:inputType="textPassword"
-    tools:ignore="LabelFor,MissingConstraints"
-    tools:layout_editor_absoluteX="100dp"
-    tools:layout_editor_absoluteY="329dp"
-    android:autofillHints="true" />
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Usuario"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.293"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.298" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autofillHints="true"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.478"
+        tools:ignore="LabelFor,MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
