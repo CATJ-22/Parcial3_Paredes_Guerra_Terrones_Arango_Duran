@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Activities.Agregar_RecetasActivity"
     android:orientation="vertical"
-    android:background="">
+    android:padding="20dp">
 
     <TextView
         android:layout_width="wrap_content"
@@ -16,102 +16,123 @@
         android:layout_gravity="center"
         android:layout_marginBottom="10dp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ingrese el nombre:"
-        android:textSize="20dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"/>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/txt_name"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ingrese la imagen:"
-        android:textSize="20dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ingrese el nombre:"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"/>
 
-    <EditText
-        android:id="@+id/txt_idrecipes"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"/>
+            <EditText
+                android:id="@+id/txt_name"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ingrese la descripcion:"
-        android:textSize="20dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Seleccione la imagen:"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"/>
 
-    <EditText
-        android:id="@+id/txt_description"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"/>
+            <Button
+                android:id="@+id/btn_loadImage"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Cargar Imagen"
+                android:onClick="loadImage"
+                android:layout_marginBottom="10dp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ingrese los ingredientes:"
-        android:textSize="20dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"/>
+            <TextView
+                android:id="@+id/txt_routeRecipes"
+                android:layout_width="350dp"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:textColor="#071019"/>
 
-    <EditText
-        android:id="@+id/txt_ingredients"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ingrese la descripcion:"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ingrese el restaurante:"
-        android:textSize="20dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"/>
+            <EditText
+                android:id="@+id/txt_description"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"/>
 
-    <EditText
-        android:id="@+id/txt_restaurant"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ingrese los ingredientes:"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ingrese los comentarios:"
-        android:textSize="20dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"/>
+            <EditText
+                android:id="@+id/txt_ingredients"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"/>
 
-    <EditText
-        android:id="@+id/txt_comments"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ingrese el restaurante:"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"/>
 
-    <Button
-        android:id="@+id/btn_saveRecipe"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Guardar"
-        android:onClick="saveRecipe"/>
+            <EditText
+                android:id="@+id/txt_restaurant"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ingrese los comentarios:"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"/>
+
+            <EditText
+                android:id="@+id/txt_comments"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"/>
+
+            <Button
+                android:id="@+id/btn_saveRecipe"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Guardar"
+                android:onClick="saveRecipe"/>
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
