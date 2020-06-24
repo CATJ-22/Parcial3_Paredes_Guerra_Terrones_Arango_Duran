@@ -6,15 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".Activities.Agregar_RecetasActivity"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:padding="20dp"
+    android:background="@drawable/bgreglistagre">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ingrese una Nueva Receta"
         android:textSize="30dp"
+        android:textColor="#000000"
+        android:textStyle="bold"
         android:layout_gravity="center"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginBottom="7dp"/>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -30,6 +33,8 @@
                 android:layout_height="wrap_content"
                 android:text="Ingrese el nombre:"
                 android:textSize="20dp"
+                android:textColor="#000000"
+                android:textStyle="bold"
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"/>
 
@@ -38,13 +43,16 @@
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                android:background="#E2F8F8F8"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Seleccione la imagen:"
                 android:textSize="20dp"
+                android:textColor="#000000"
+                android:textStyle="bold"
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"/>
 
@@ -70,6 +78,8 @@
                 android:layout_height="wrap_content"
                 android:text="Ingrese la descripcion:"
                 android:textSize="20dp"
+                android:textColor="#000000"
+                android:textStyle="bold"
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"/>
 
@@ -85,6 +95,8 @@
                 android:layout_height="wrap_content"
                 android:text="Ingrese los ingredientes:"
                 android:textSize="20dp"
+                android:textColor="#000000"
+                android:textStyle="bold"
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"/>
 
@@ -100,6 +112,8 @@
                 android:layout_height="wrap_content"
                 android:text="Ingrese el restaurante:"
                 android:textSize="20dp"
+                android:textColor="#000000"
+                android:textStyle="bold"
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"/>
 
@@ -115,6 +129,8 @@
                 android:layout_height="wrap_content"
                 android:text="Ingrese los comentarios:"
                 android:textSize="20dp"
+                android:textColor="#000000"
+                android:textStyle="bold"
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"/>
 
