@@ -49,6 +49,7 @@ android:background="@drawable/bgloginymenu">
         android:layout_height="44dp"
         android:background="#E2F8F8F8"
         android:ems="10"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.507"
