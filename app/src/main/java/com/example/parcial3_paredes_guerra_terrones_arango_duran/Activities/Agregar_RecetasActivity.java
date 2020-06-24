@@ -1,5 +1,6 @@
 package com.example.parcial3_paredes_guerra_terrones_arango_duran.Activities;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
@@ -8,13 +9,15 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.TextView;
 
 import com.example.parcial3_paredes_guerra_terrones_arango_duran.BD.RecetasBDHelper;
 import com.example.parcial3_paredes_guerra_terrones_arango_duran.R;
 
 public class Agregar_RecetasActivity extends AppCompatActivity {
-    EditText name, id_recipes, description, ingredients, restaurant, comments;
+    EditText name, description, ingredients, restaurant, comments;
+    TextView path_image;
+    Intent file_intent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,16 +28,40 @@ public class Agregar_RecetasActivity extends AppCompatActivity {
 
     public void initializeControls(){
         name=(EditText)findViewById(R.id.txt_name);
-        id_recipes=(EditText)findViewById(R.id.txt_idrecipes);
+        path_image=(TextView) findViewById(R.id.txt_routeRecipes);
+        path_image.setEnabled(false);
         description=(EditText)findViewById(R.id.txt_description);
         ingredients=(EditText)findViewById(R.id.txt_ingredients);
         restaurant=(EditText)findViewById(R.id.txt_restaurant);
         comments=(EditText)findViewById(R.id.txt_comments);
+        file_intent=new Intent(Intent.ACTION_GET_CONTENT);
     }
 
+    //Boton para cargar Imagen.
+    public void loadImage(View view){
+        file_intent.setType("*/*");
+        startActivityForResult(file_intent,10);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode) {
+
+            case 10:
+                if (resultCode == RESULT_OK) {
+                    String path = data.getData().getPath();
+                    path_image.setText(path);
+                }
+                break;
+        }
+    }
+
+    //Metodo para salvar receta.
     public void saveRecipe(View view){
         String nombre= name.getText().toString();
-        String id_receta=id_recipes.getText().toString();
+        //String ruta_img=id_recipes.getText().toString();
         String descripcion=description.getText().toString();
         String ingrediente=ingredients.getText().toString();
         String restaurante=restaurant.getText().toString();
@@ -46,20 +73,14 @@ public class Agregar_RecetasActivity extends AppCompatActivity {
         if(db != null){
             ContentValues values = new ContentValues();
             values.put("name", nombre);
-            values.put("id_recipes", id_receta);
+            //values.put("id_recipes", id_receta);
             values.put("description", descripcion);
             values.put("ingredients", ingrediente);
             values.put("restaurant", restaurante);
             values.put("comments", comentario);
 
-            //db.insert("Recipes", null, values);
-
-            //db.close();
-
-            //Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT).show();
-
-            //Intent i = new Intent(this, MenuActivity.class);
-            //startActivity(i);
+            //db.insert("Recipes")
         }
     }
 }
+//path_image.setText("HOLA QUE TAL");}
