@@ -14,7 +14,10 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MenuActivity extends AppCompatActivity {
+
+
     String tipo="", name="";
+
     Button boton;
 
     @Override

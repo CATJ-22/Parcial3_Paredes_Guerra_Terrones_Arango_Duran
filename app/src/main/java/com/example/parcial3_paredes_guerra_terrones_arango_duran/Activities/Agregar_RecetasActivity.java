@@ -3,10 +3,12 @@ package com.example.parcial3_paredes_guerra_terrones_arango_duran.Activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.parcial3_paredes_guerra_terrones_arango_duran.BD.RecetasBDHelper;
 import com.example.parcial3_paredes_guerra_terrones_arango_duran.R;
@@ -50,7 +52,14 @@ public class Agregar_RecetasActivity extends AppCompatActivity {
             values.put("restaurant", restaurante);
             values.put("comments", comentario);
 
-            //db.insert("Recipes")
+            //db.insert("Recipes", null, values);
+
+            //db.close();
+
+            //Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT).show();
+
+            //Intent i = new Intent(this, MenuActivity.class);
+            //startActivity(i);
         }
     }
 }
