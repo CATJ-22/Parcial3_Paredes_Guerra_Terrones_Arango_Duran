@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-import com.example.parcial3_paredes_guerra_terrones_arango_duran.BD_Recetas;
+import com.example.parcial3_paredes_guerra_terrones_arango_duran.BD.RecetasBDHelper;
 import com.example.parcial3_paredes_guerra_terrones_arango_duran.R;
 
 public class Agregar_RecetasActivity extends AppCompatActivity {
@@ -38,7 +38,7 @@ public class Agregar_RecetasActivity extends AppCompatActivity {
         String restaurante=restaurant.getText().toString();
         String comentario=comments.getText().toString();
 
-        BD_Recetas Datos = new BD_Recetas(getApplicationContext(), "Recipes",null, R.integer.DBVersion);
+        RecetasBDHelper Datos = new RecetasBDHelper(getApplicationContext(), "Recipes",null, R.integer.DBVersion);
         SQLiteDatabase db = Datos.getWritableDatabase();
 
         if(db != null){
