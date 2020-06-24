@@ -17,7 +17,6 @@ public class MenuActivity extends AppCompatActivity {
 
 
     String tipo="", name="";
-
     Button boton;
 
     @Override
@@ -31,6 +30,7 @@ public class MenuActivity extends AppCompatActivity {
             RecetasBDHelper Datos = new RecetasBDHelper(getApplicationContext(), "Users",null, R.integer.DBVersion);
             SQLiteDatabase db = Datos.getReadableDatabase();
             Cursor c = db.rawQuery(" SELECT type FROM Users WHERE name='"+name+"'", null);
+            c.moveToFirst();
             tipo = c.getString(0);
             Toast.makeText(getApplicationContext(),tipo,Toast.LENGTH_LONG).show();
         }catch (Exception e){
