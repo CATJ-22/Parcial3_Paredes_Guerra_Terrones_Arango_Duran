@@ -31,6 +31,7 @@ public class RecetasBDHelper extends SQLiteOpenHelper {
         //Se crea la nueva versión de la tabla
         db.execSQL(tableUsers);
         db.execSQL(tableRecipes);
+        db.execSQL(tableFav_recipe);
     }
 
 }
