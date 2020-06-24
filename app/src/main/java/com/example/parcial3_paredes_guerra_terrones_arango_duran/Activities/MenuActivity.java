@@ -1,9 +1,13 @@
 package com.example.parcial3_paredes_guerra_terrones_arango_duran.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.parcial3_paredes_guerra_terrones_arango_duran.BD.RecetasBDHelper;
 import com.example.parcial3_paredes_guerra_terrones_arango_duran.R;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,7 +25,11 @@ public class MenuActivity extends AppCompatActivity {
         boton=(Button)findViewById(R.id.btagrerece);
 
         try{
-        //traer tipo de usuario desde base de datos
+            RecetasBDHelper Datos = new RecetasBDHelper(getApplicationContext(), "Users",null, R.integer.DBVersion);
+            SQLiteDatabase db = Datos.getReadableDatabase();
+            Cursor c = db.rawQuery(" SELECT type FROM Users WHERE name='"+name+"'", null);
+            tipo = c.getString(0);
+
         }catch (Exception e){
             Toast.makeText(getApplicationContext(),"Errorsote: "+e.getMessage().toString(),Toast.LENGTH_SHORT).show();
         }
