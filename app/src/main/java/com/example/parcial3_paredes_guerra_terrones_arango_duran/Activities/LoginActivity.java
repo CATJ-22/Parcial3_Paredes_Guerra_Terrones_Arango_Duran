@@ -11,6 +11,7 @@ import com.example.parcial3_paredes_guerra_terrones_arango_duran.R;
 
 public class LoginActivity extends AppCompatActivity {
     EditText nombre;
+    String user, pass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +21,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void cargarVariables(){
         nombre = (EditText) findViewById(R.id.TextPersonName);
+
     }
 
     public void mainmenu (View view){
