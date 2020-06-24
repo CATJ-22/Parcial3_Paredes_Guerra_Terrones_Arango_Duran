@@ -16,7 +16,7 @@ android:background="@drawable/bgloginymenu">
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/TextPassword"
         app:layout_constraintVertical_bias="0.09" />
 
     <Button
@@ -38,7 +38,7 @@ android:background="@drawable/bgloginymenu">
         android:textColor="#000000"
         android:textSize="20dp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
+        app:layout_constraintBottom_toTopOf="@+id/TextPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.325"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,7 +75,7 @@ android:background="@drawable/bgloginymenu">
         app:layout_constraintVertical_bias="1.0" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/TextPassword"
         android:layout_width="218dp"
         android:layout_height="47dp"
         android:autofillHints="true"
