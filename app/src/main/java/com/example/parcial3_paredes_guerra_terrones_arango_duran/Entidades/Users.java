@@ -6,15 +6,15 @@ public class Users{
 
 
     private String name;
-    private String id;
+    private int id_user;
     private String email;
     private String pass;
     private String type;
 
 
-    public Users(String n, String i, String e, String p, String t){
+    public Users(String n, int i, String e, String p, String t){
        name= n;
-       id= i;
+       id_user= i;
        email= e;
        pass= p;
        type=t;
@@ -30,12 +30,12 @@ public class Users{
         this.name = name;
     }
 
-    public String getId() {
-        return id;
+    public int getId() {
+        return id_user;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setId(int id) {
+        this.id_user = id;
     }
 
     public String getEmail() {

@@ -4,14 +4,14 @@ package com.example.parcial3_paredes_guerra_terrones_arango_duran.Entidades;
 public class Recipes{
 
     private String name;
-    private String id_recipes;
+    private int id_recipes;
     private String description;
     private String ingredients;
     private String restaurant;
     private String comments;
     private String image;
 
-    public Recipes(String n,String ir, String descrip, String ing, String res, String comm, String img){
+    public Recipes(String n,int ir, String descrip, String ing, String res, String comm, String img){
         name=n;
         id_recipes=ir;
         description=descrip;
@@ -31,11 +31,11 @@ public class Recipes{
         this.name = name;
     }
 
-    public String getId_recipes() {
+    public int getId_recipes() {
         return id_recipes;
     }
 
-    public void setId_recipes(String id_recipes) {
+    public void setId_recipes(int id_recipes) {
         this.id_recipes = id_recipes;
     }
 
