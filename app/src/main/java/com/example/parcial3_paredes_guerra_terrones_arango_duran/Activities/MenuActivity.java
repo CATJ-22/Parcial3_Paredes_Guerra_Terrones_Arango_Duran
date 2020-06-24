@@ -45,17 +45,18 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void recetasdispo (View view){
-        Intent intent = new Intent(MenuActivity.this, Lista_recetaActivity.class);
-        startActivity(intent);
+        Intent a = new Intent(MenuActivity.this, Lista_recetaActivity.class);
+        startActivity(a);
     }
     public void recetasguar (View view){
-        Intent intent = new Intent(MenuActivity.this, RecetasGuardasActivity.class);
-        startActivity(intent);
+        Intent b = new Intent(MenuActivity.this, RecetasGuardasActivity.class);
+        b.putExtra("nom", name);
+        startActivity(b);
     }
 
     public void addrecet (View view){
-        Intent intent = new Intent(MenuActivity.this, Agregar_RecetasActivity.class);
-        startActivity(intent);
+        Intent c = new Intent(MenuActivity.this, Agregar_RecetasActivity.class);
+        startActivity(c);
     }
 
 }
