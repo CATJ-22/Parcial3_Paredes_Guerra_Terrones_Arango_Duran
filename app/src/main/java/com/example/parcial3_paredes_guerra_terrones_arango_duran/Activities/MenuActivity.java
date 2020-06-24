@@ -1,0 +1,41 @@
+package com.example.parcial3_paredes_guerra_terrones_arango_duran.Activities;
+
+import androidx.appcompat.app.AppCompatActivity;
+import com.example.parcial3_paredes_guerra_terrones_arango_duran.R;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+public class MenuActivity extends AppCompatActivity {
+    String tipo="normal";
+    Button boton;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_menu);
+
+        boton=(Button)findViewById(R.id.btagrerece);
+
+        if(tipo.equals("normal")){
+            boton.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    public void recetasdispo (View view){
+        Intent intent = new Intent(MenuActivity.this, Lista_recetaActivity.class);
+        startActivity(intent);
+    }
+    public void recetasguar (View view){
+        Intent intent = new Intent(MenuActivity.this, RecetasGuardasActivity.class);
+        startActivity(intent);
+    }
+
+    public void addrecet (View view){
+        Intent intent = new Intent(MenuActivity.this, Agregar_RecetasActivity.class);
+        startActivity(intent);
+    }
+
+}
