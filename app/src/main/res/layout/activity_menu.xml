@@ -7,41 +7,46 @@
     tools:context=".Activities.MenuActivity"
     android:background="@drawable/bgloginymenu">
 
+
+
+    <!--BUTTON GUARDAR RECETAS -->
     <Button
-        android:id="@+id/btreceguard"
+        android:id="@+id/btn_save_recipes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ver recetas guardas "
-        android:onClick="recetasdispo"
+        android:text="RECETAS GUARDADAS "
+        android:onClick="SaveRecipes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btrecedispo"
+        app:layout_constraintTop_toBottomOf="@+id/btn_recipes"
         app:layout_constraintVertical_bias="0.211"
         />
-
+    <!-- BUTTON RECETAS DISPONIBLES-->
     <Button
-        android:id="@+id/btrecedispo"
+        android:id="@+id/btn_recipes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Ver Recetas Disponibles"
-        android:onClick="recetasguar"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="RECETAS DISPONIBLES"
+        android:onClick="Recipes"
+        app:layout_constraintBottom_toBottomOf="@id/btn_add_recipes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.327" />
 
+
+    <!--BUTTON AGREGAR RECETAS -->
     <Button
-        android:id="@+id/btagrerece"
+        android:id="@+id/btn_add_recipes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Agregar Receta"
-        android:onClick="addrecet"
+        android:text="AGREGAR RECETAS"
+        android:onClick="AddRecipes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btreceguard"
+        app:layout_constraintTop_toBottomOf="parent"
         app:layout_constraintVertical_bias="0.303" />
 </androidx.constraintlayout.widget.ConstraintLayout>

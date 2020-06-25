@@ -23,10 +23,10 @@ public class RecetasBDHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
         //Se elimina la versión anterior de la tabla
-        db.execSQL("DROP TABLE IF EXISTS tableUsers");
+       /* db.execSQL("DROP TABLE IF EXISTS tableUsers");
         db.execSQL("DROP TABLE IF EXISTS tableRecipes");
         db.execSQL("DROP TABLE IF EXISTS tableFav_recipe");
-
+*/
 
         //Se crea la nueva versión de la tabla
         db.execSQL(tableUsers);

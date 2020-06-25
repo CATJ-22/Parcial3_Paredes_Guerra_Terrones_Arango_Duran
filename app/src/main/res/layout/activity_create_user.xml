@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Activities.CreateUserActivity"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+    <!-- Crear Usuario Label -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="#e33c3c"
+        android:padding="8dp"
+        android:text="CREAR USUARIO"
+        android:textColor="#FDFCFC"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:fontFamily="sans-serif-black" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="35dp"
+        android:orientation="vertical">
+        <!-- Elegir Tipo de Usuario  -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Opciones de Usuario"
+            android:id="@+id/titulo"/>
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spOptions"
+            android:layout_below="@+id/opciones"
+            android:layout_margin="15dp">
+        </Spinner>
+        <!-- Ingresar Nombre  -->
+        <TextView
+            android:id="@+id/name_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Ingrese su nombre"
+            android:textColor="#020202"
+            app:fontFamily="sans-serif-medium" />
+        <EditText
+            android:id="@+id/txtname"
+            android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:padding="5dp" />
+
+        <!-- Ingresar Email -->
+        <TextView
+            android:id="@+id/email_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Ingrese su correo  "
+            android:textColor="#0B0000"
+            app:fontFamily="sans-serif-medium" />
+        <EditText
+            android:id="@+id/txtemail"
+            android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:padding="5dp" />
+        <!-- Ingresar Contraseña Label -->
+        <TextView
+            android:id="@+id/passwordview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Ingrese su contraseña "
+            android:textColor="#000000"
+            app:fontFamily="sans-serif-medium" />
+        <EditText
+            android:id="@+id/txtpassword"
+            android:layout_height="wrap_content"
+            android:layout_width="250dp"
+            android:padding="5dp" />
+              <!-- Button Enviar -->
+        <Button
+            android:id="@+id/enviar"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#4CAF50"
+            android:layout_marginTop="30dp"
+            android:padding="3dp"
+            android:text="Enviar"
+            android:onClick="Registrar"
+            android:textColor="#FFFFFF" />
+
+        <!-- Button Login -->
+        <Button
+            android:id="@+id/login"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#4CAF50"
+            android:layout_marginTop="30dp"
+            android:padding="3dp"
+            android:text="Iniciar Sesion"
+            android:onClick="Login"
+            android:textColor="#FFFFFF" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

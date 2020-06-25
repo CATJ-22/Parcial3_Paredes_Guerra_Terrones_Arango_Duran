@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
@@ -39,11 +40,65 @@ public class MainActivity extends AppCompatActivity {
 
     private void ImpresionDatos() {
         try {
-            RecetasBDHelper smDB = new RecetasBDHelper(this, "Users", null, 1);
+            RecetasBDHelper smDB = new RecetasBDHelper(this, "users", null, 1);
             SQLiteDatabase db = smDB.getWritableDatabase();
-            if(db != null){
-                db.execSQL("INSERT INTO Users (name, email, pass, type)"+ "VALUES ('zamora','zamora@example.com','123','Administrador')");
-            }
+            /*
+            if(db != null) {
+                db.execSQL("INSERT INTO users (name, email, password, type)" + "VALUES ('zamora','zamora@example.com','123','Administrador')");
+
+                String[] usuarios = new String[]{"id_user", "name", "email", "password", "type"};
+                Cursor c = db.query("users", usuarios, null, null, null, null, null);
+
+                if(c!=null){
+                    //Posicionar al principio el cursor
+                    c.moveToFirst();
+                    do{
+
+                        String name = c.getString(c.getColumnIndex("name"));
+                        String pass = c.getString(c.getColumnIndex("password"));
+                        Intent e = getIntent();
+                        String namepuesto= e.getStringExtra("name");
+                        String passwordpuesto=  e.getStringExtra("password");
+
+                        if(name.equals(namepuesto) && pass.equals(passwordpuesto)){
+                            String user_type = c.getString(c.getColumnIndex("type"));
+                            String user_name = c.getString(c.getColumnIndex("name"));
+                            String user_pass = c.getString(c.getColumnIndex("password"));
+                            type.setText(user)
+                        }*/
+
+
+
+
+                /*  if(db !=null){
+                // Creamos un arreglo quemado para usuarios
+                String[] usuarios =new String[]{"id_user","name","email","password","type"};
+                //Creamos el cursor
+                Cursor c = db.query("users",usuarios,null,null,null,null,null);
+
+                if(c!=null){
+                    //Posicionar al principio el cursor
+                    c.moveToFirst();
+                    do{
+                        String user_type = c.getString(c.getColumnIndex("type"));
+                        String user_name = c.getString(c.getColumnIndex("name"));
+                        String user_pass = c.getString(c.getColumnIndex("password"));
+
+                        if(user_name.equals(namepuesto) && user_pass.equals(passwordpuesto)){
+                            Toast.makeText(getApplicationContext(), "WELCOME"+ user_type, Toast.LENGTH_LONG).show();
+                            Intent i = new Intent(this, MenuActivity.class);
+                            i.putExtra("name", user_name);
+                            i.putExtra("password",user_pass);
+                            i.putExtra("type",user_type);
+                            startActivity(i);
+                        }
+
+                    }while (c.moveToNext()); //mover a la siguiente linea
+                }
+                c.close();
+                db.close();
+            }*/
+
         } catch (Exception e) {
 
         }

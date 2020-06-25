@@ -17,15 +17,15 @@ public class MenuActivity extends AppCompatActivity {
 
 
     String tipo="", name="";
-    Button boton;
+    Button btnaddrecipe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
         name = getIntent().getStringExtra("nom");
-        boton=(Button)findViewById(R.id.btagrerece);
-
+        btnaddrecipe=(Button)findViewById(R.id.btn_add_recipes);
+/*
         try{
             RecetasBDHelper Datos = new RecetasBDHelper(getApplicationContext(), "Users",null, R.integer.DBVersion);
             SQLiteDatabase db = Datos.getReadableDatabase();
@@ -40,23 +40,44 @@ public class MenuActivity extends AppCompatActivity {
         }
 
         if(tipo.equals("normal")){
-            boton.setVisibility(View.INVISIBLE);
-        }
+            btnaddrecipe.setVisibility(View.INVISIBLE);
+        }*/
     }
 
-    public void recetasdispo (View view){
+    //RECETAS DISPONIBLES
+    public void Recipes (View view){
+        /*Intent i = getIntent();
+        tipo=i.getStringExtra("type");
+       /* if(tipo_logueado.equals("Administrador")){
+            Toast.makeText(MainActivity.this, item.getTitle().toString(), Toast.LENGTH_SHORT).show();
+            Intent crear = new Intent(MainActivity.this, CrearUsuarioActivity.class);
+            startActivity(crear);
+        } else
+            item.setVisible(true);
         Intent a = new Intent(MenuActivity.this, Lista_recetaActivity.class);
-        startActivity(a);
-    }
-    public void recetasguar (View view){
-        Intent b = new Intent(MenuActivity.this, RecetasGuardasActivity.class);
-        b.putExtra("nom", name);
-        startActivity(b);
+        startActivity(a);*/
+        Intent i = new Intent(getApplicationContext(),Lista_recetaActivity.class);
+        startActivity(i);
     }
 
-    public void addrecet (View view){
+    //GUARDAR RECETAS
+    public void SaveRecipes (View view){
+        /*Intent b = new Intent(MenuActivity.this, RecetasGuardasActivity.class);
+        b.putExtra("nom", name);
+        startActivity(b);*/
+        Intent i = new Intent(getApplicationContext(),CreateUserActivity.class);
+        startActivity(i);
+    }
+
+    //AGREGAR RECETAS
+    public void AddRecipes (View view){
+        /*
         Intent c = new Intent(MenuActivity.this, Agregar_RecetasActivity.class);
         startActivity(c);
+
+         */
+        Intent i = new Intent(getApplicationContext(),Agregar_RecetasActivity.class);
+        startActivity(i);
     }
 
 }
