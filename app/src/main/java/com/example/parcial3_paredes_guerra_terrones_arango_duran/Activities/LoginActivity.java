@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    // BUTTON LOGIN FUNCIONAL
+    // BUTTON LOGIN KIRIAM
     public void Submit (View view){
         try{
             //ASIGNAMOS A NUESTRAS VARIABLES EL CAMPO DE NAME Y PASSWORD

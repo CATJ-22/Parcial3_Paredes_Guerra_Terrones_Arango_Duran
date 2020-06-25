@@ -9,7 +9,7 @@
 
 
 
-    <!--BUTTON GUARDAR RECETAS -->
+    <!--BUTTON GUARDAR RECETAS KIRIAM -->
     <Button
         android:id="@+id/btn_save_recipes"
         android:layout_width="wrap_content"

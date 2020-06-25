@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import com.example.parcial3_paredes_guerra_terrones_arango_duran.BD.RecetasBDHelper;
 import com.example.parcial3_paredes_guerra_terrones_arango_duran.R;
-
+//KIRIAM
 public class CreateUserActivity extends AppCompatActivity {
     EditText txtname;
     EditText txtemail;
