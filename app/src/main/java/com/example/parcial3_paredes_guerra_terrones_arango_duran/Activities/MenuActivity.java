@@ -23,8 +23,8 @@ public class MenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-        name = getIntent().getStringExtra("nom");
-        btnaddrecipe=(Button)findViewById(R.id.btn_add_recipes);
+        //name = getIntent().getStringExtra("nom");
+       // btnaddrecipe=(Button)findViewById(R.id.btn_add_recipes);
 /*
         try{
             RecetasBDHelper Datos = new RecetasBDHelper(getApplicationContext(), "Users",null, R.integer.DBVersion);
@@ -74,7 +74,6 @@ public class MenuActivity extends AppCompatActivity {
         /*
         Intent c = new Intent(MenuActivity.this, Agregar_RecetasActivity.class);
         startActivity(c);
-
          */
         Intent i = new Intent(getApplicationContext(),Agregar_RecetasActivity.class);
         startActivity(i);

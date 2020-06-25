@@ -8,45 +8,47 @@
     android:background="@drawable/bgloginymenu">
 
 
-
     <!--BUTTON GUARDAR RECETAS KIRIAM -->
-    <Button
-        android:id="@+id/btn_save_recipes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="RECETAS GUARDADAS "
-        android:onClick="SaveRecipes"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_recipes"
-        app:layout_constraintVertical_bias="0.211"
-        />
-    <!-- BUTTON RECETAS DISPONIBLES-->
     <Button
         android:id="@+id/btn_recipes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RECETAS DISPONIBLES"
         android:onClick="Recipes"
-        app:layout_constraintBottom_toBottomOf="@id/btn_add_recipes"
+        android:text="RECETAS DISPONIBLES"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.327" />
+        app:layout_constraintVertical_bias="0.531" />
 
+    <!-- BUTTON RECETAS DISPONIBLES-->
+    <Button
+        android:id="@+id/btn_save_recipes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="212dp"
+        android:onClick="SaveRecipes"
+        android:text="RECETAS GUARDADAS "
+        app:layout_constraintBottom_toTopOf="@+id/btn_recipes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.346" />
 
     <!--BUTTON AGREGAR RECETAS -->
     <Button
         android:id="@+id/btn_add_recipes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="AGREGAR RECETAS"
         android:onClick="AddRecipes"
+        android:text="AGREGAR RECETAS"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.303" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_recipes"
+        app:layout_constraintVertical_bias="0.266" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
