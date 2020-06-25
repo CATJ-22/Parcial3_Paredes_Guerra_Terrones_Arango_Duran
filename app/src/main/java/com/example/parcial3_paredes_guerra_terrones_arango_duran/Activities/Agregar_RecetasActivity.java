@@ -7,6 +7,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -16,6 +17,7 @@ import com.example.parcial3_paredes_guerra_terrones_arango_duran.BD.RecetasBDHel
 import com.example.parcial3_paredes_guerra_terrones_arango_duran.R;
 
 public class Agregar_RecetasActivity extends AppCompatActivity {
+    int a=0;
     EditText name, description, ingredients, restaurant, comments;
     TextView path_image;
     Intent file_intent;
@@ -59,8 +61,38 @@ public class Agregar_RecetasActivity extends AppCompatActivity {
         }
     }
 
+    //Validaciones
+    public void ValidarDatos (View view){
+        //Validaciones para los datos de entrada.
+        if(TextUtils.isEmpty(name.getText().toString()))
+            name.setError("No puede estar vacio.");
+        else
+            a++;
+        if(TextUtils.isEmpty(description.getText().toString()))
+            description.setError("No puede estar vacio.");
+        else
+            a++;
+        if(TextUtils.isEmpty(ingredients.getText().toString()))
+            ingredients.setError("No puede estar vacio.");
+        else
+            a++;
+        if(TextUtils.isEmpty(restaurant.getText().toString()))
+            restaurant.setError("No puede estar vacio.");
+        else
+            a++;
+        if(TextUtils.isEmpty(comments.getText().toString()))
+            comments.setError("No puede estar vacio.");
+        else
+            a++;
+
+        if(a==5)
+            saveRecipe();
+        else
+            a=0;
+    }
+
     //Metodo para salvar receta.
-    public void saveRecipe(View view){
+    public void saveRecipe(){
         try {
             String nombre= name.getText().toString();
             String ruta_img=path_image.getText().toString();
@@ -83,6 +115,9 @@ public class Agregar_RecetasActivity extends AppCompatActivity {
 
                 db.insert("recipes", null, values);
                 Toast.makeText(this, "Datos Insertados Correctamente", Toast.LENGTH_SHORT).show();
+
+                Intent i = new Intent(getApplicationContext(), MenuActivity.class);
+                startActivity(i);
 
             }
         }catch (Exception e){
