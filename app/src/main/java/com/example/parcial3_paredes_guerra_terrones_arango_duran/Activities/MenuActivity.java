@@ -56,7 +56,7 @@ public class MenuActivity extends AppCompatActivity {
             item.setVisible(true);
         Intent a = new Intent(MenuActivity.this, Lista_recetaActivity.class);
         startActivity(a);*/
-        Intent i = new Intent(getApplicationContext(),Lista_recetaActivity.class);
+        Intent i = new Intent(getApplicationContext(),CreateUserActivity.class);
         startActivity(i);
     }
 
@@ -76,7 +76,7 @@ public class MenuActivity extends AppCompatActivity {
         startActivity(c);
 
          */
-        Intent i = new Intent(getApplicationContext(),Agregar_RecetasActivity.class);
+        Intent i = new Intent(getApplicationContext(),CreateUserActivity.class);
         startActivity(i);
     }
 
