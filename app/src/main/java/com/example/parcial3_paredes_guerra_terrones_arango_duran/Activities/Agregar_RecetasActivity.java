@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.parcial3_paredes_guerra_terrones_arango_duran.BD.RecetasBDHelper;
 import com.example.parcial3_paredes_guerra_terrones_arango_duran.R;
@@ -60,27 +61,32 @@ public class Agregar_RecetasActivity extends AppCompatActivity {
 
     //Metodo para salvar receta.
     public void saveRecipe(View view){
-        String nombre= name.getText().toString();
-        //String ruta_img=id_recipes.getText().toString();
-        String descripcion=description.getText().toString();
-        String ingrediente=ingredients.getText().toString();
-        String restaurante=restaurant.getText().toString();
-        String comentario=comments.getText().toString();
+        try {
+            String nombre= name.getText().toString();
+            String ruta_img=path_image.getText().toString();
+            String descripcion=description.getText().toString();
+            String ingrediente=ingredients.getText().toString();
+            String restaurante=restaurant.getText().toString();
+            String comentario=comments.getText().toString();
 
-        RecetasBDHelper Datos = new RecetasBDHelper(getApplicationContext(), "Recipes",null, R.integer.DBVersion);
-        SQLiteDatabase db = Datos.getWritableDatabase();
+            RecetasBDHelper Datos = new RecetasBDHelper(getApplicationContext(), "Recipes",null, R.integer.DBVersion);
+            SQLiteDatabase db = Datos.getWritableDatabase();
 
-        if(db != null){
-            ContentValues values = new ContentValues();
-            values.put("name", nombre);
-            //values.put("id_recipes", id_receta);
-            values.put("description", descripcion);
-            values.put("ingredients", ingrediente);
-            values.put("restaurant", restaurante);
-            values.put("comments", comentario);
+            if(db != null){
+                ContentValues values = new ContentValues();
+                values.put("name", nombre);
+                values.put("description", descripcion);
+                values.put("ingredients", ingrediente);
+                values.put("restaurant", restaurante);
+                values.put("comments", comentario);
+                values.put("image", ruta_img);
 
-            //db.insert("Recipes")
+                db.insert("recipes", null, values);
+                Toast.makeText(this, "Datos Insertados Correctamente", Toast.LENGTH_SHORT).show();
+
+            }
+        }catch (Exception e){
+            Toast.makeText(this, "Error: "+e.getMessage().toString(), Toast.LENGTH_SHORT).show();
         }
     }
 }
-//path_image.setText("HOLA QUE TAL");}
