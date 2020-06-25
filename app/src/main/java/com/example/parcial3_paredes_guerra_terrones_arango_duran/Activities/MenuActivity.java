@@ -56,7 +56,7 @@ public class MenuActivity extends AppCompatActivity {
             item.setVisible(true);
         Intent a = new Intent(MenuActivity.this, Lista_recetaActivity.class);
         startActivity(a);*/
-        Intent i = new Intent(getApplicationContext(),CreateUserActivity.class);
+        Intent i = new Intent(getApplicationContext(),Lista_recetaActivity.class);
         startActivity(i);
     }
 
@@ -65,7 +65,7 @@ public class MenuActivity extends AppCompatActivity {
         /*Intent b = new Intent(MenuActivity.this, RecetasGuardasActivity.class);
         b.putExtra("nom", name);
         startActivity(b);*/
-        Intent i = new Intent(getApplicationContext(),CreateUserActivity.class);
+        Intent i = new Intent(getApplicationContext(),RecetasGuardasActivity.class);
         startActivity(i);
     }
 
@@ -76,7 +76,7 @@ public class MenuActivity extends AppCompatActivity {
         startActivity(c);
 
          */
-        Intent i = new Intent(getApplicationContext(),CreateUserActivity.class);
+        Intent i = new Intent(getApplicationContext(),Agregar_RecetasActivity.class);
         startActivity(i);
     }
 
