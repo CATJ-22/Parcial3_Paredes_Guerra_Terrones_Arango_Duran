@@ -4,11 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activities.MenuActivity"
-    android:background="@drawable/bgloginymenu">
+    android:background="@drawable/bgloginymenu"
+    tools:context=".Activities.MenuActivity">
 
 
-    <!--BUTTON GUARDAR RECETAS KIRIAM -->
+    <!-- BUTTON RECETAS DISPONIBLES-->
+
+    <!--BUTTON AGREGAR RECETAS -->
+
+    <!--BUTTON RECETAS GUARDADAS -->
+
     <Button
         android:id="@+id/btn_recipes"
         android:layout_width="wrap_content"
@@ -17,38 +22,33 @@
         android:text="RECETAS DISPONIBLES"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.531" />
+        app:layout_constraintVertical_bias="0.418" />
 
-    <!-- BUTTON RECETAS DISPONIBLES-->
     <Button
-        android:id="@+id/btn_save_recipes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="212dp"
-        android:onClick="SaveRecipes"
-        android:text="RECETAS GUARDADAS "
-        app:layout_constraintBottom_toTopOf="@+id/btn_recipes"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.346" />
-
-    <!--BUTTON AGREGAR RECETAS -->
-    <Button
-        android:id="@+id/btn_add_recipes"
+        android:id="@+id/btn_agregar_recipes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="AddRecipes"
         android:text="AGREGAR RECETAS"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_recetas_guardadas"
+        app:layout_constraintEnd_toEndOf="@+id/btn_recetas_guardadas"
+        app:layout_constraintStart_toStartOf="@+id/btn_recetas_guardadas"
+        app:layout_constraintTop_toTopOf="@+id/btn_recetas_guardadas" />
+
+    <Button
+        android:id="@+id/btn_recetas_guardadas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="SaveRecipes"
+        android:text="RECETAS GUARDADAS "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.508"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_recipes"
-        app:layout_constraintVertical_bias="0.266" />
+        app:layout_constraintVertical_bias="0.136" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
