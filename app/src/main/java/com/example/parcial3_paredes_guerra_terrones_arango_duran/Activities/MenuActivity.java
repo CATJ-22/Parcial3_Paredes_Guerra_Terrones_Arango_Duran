@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class MenuActivity extends AppCompatActivity {
-//ABIZAG
+//realizando push y commit
 
     String tipo="", name="";
     Button btnaddrecipe;
