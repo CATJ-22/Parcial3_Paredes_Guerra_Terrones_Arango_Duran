@@ -42,6 +42,9 @@ public class MainActivity extends AppCompatActivity {
         try {
             RecetasBDHelper smDB = new RecetasBDHelper(this, "users", null, 1);
             SQLiteDatabase db = smDB.getWritableDatabase();
+            //se añadio los usuarios a la BD
+            db.execSQL("INSERT INTO users (name, email, password, type)" + "VALUES ('zamora','zamora@example.com','123','Administrador')");
+            db.execSQL("INSERT INTO users (name, email, password, type)" + "VALUES ('elfo','elfo@example.com','123','Normal')");
             /*KIRIAM
             if(db != null) {
                 db.execSQL("INSERT INTO users (name, email, password, type)" + "VALUES ('zamora','zamora@example.com','123','Administrador')");

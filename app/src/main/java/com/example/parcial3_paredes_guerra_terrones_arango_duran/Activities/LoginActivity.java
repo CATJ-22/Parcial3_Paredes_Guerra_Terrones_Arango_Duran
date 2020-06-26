@@ -58,15 +58,15 @@ public class LoginActivity extends AppCompatActivity {
                     //Posicionar al principio el cursor
                     c.moveToFirst();
                     do{
-                        String user_type = c.getString(c.getColumnIndex("type"));
                         String user_name = c.getString(c.getColumnIndex("name"));
+                        String user_type = c.getString(c.getColumnIndex("type"));
                         String user_pass = c.getString(c.getColumnIndex("password"));
 
                         if(user_name.equals(namepuesto) && user_pass.equals(passwordpuesto)){
-                            Toast.makeText(getApplicationContext(), "WELCOME"+ user_type, Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Bienvenido "+ user_name, Toast.LENGTH_LONG).show();
                             Intent i = new Intent(this, MenuActivity.class);
-                            i.putExtra("name", user_name);
-                            i.putExtra("password",user_pass);
+                            i.putExtra("nom", namepuesto);
+                           //i.putExtra("password",user_pass);
                             i.putExtra("type",user_type);
                             startActivity(i);
                         }
