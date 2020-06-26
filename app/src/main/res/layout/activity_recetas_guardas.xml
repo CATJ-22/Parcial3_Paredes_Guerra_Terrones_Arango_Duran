@@ -6,10 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".Activities.RecetasGuardasActivity">
 
-    <ListView
-        android:id="@+id/listview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/bgreglistagre"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp" />
+
+    <ListView
+        android:id="@+id/listview2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="51dp"
+        tools:layout_editor_absoluteY="77dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

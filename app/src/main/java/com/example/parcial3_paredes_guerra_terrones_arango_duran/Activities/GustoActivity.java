@@ -63,9 +63,10 @@ public class GustoActivity extends AppCompatActivity {
             restaurante.setText(cursor.getString(3));
             ingredientes.setText(cursor.getString(4));
 
-            String nom=cursor.getString(1);
 
         }
+
+        nom=cursor.getString(1);
 
         String[] gusto= {"ME GUSTA", "NO ME GUSTA"};
         ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, gusto);
@@ -103,8 +104,8 @@ public class GustoActivity extends AppCompatActivity {
 
             values.put("name", nom);
             values.put("id_recipes", id_receta);
-            values.put("like_recipe", gustoo);
-            values.put("dislike_recipe", iguall);
+            values.put("like_recipe", "GUSTO: "+gustoo);
+            values.put("dislike_recipe", "IGUALA: "+iguall);
 
             BaseDeDatos.insert("fav_recipe", null, values);
             BaseDeDatos.close();

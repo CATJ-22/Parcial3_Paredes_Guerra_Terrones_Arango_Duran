@@ -30,36 +30,34 @@ public class RecetasGuardasActivity extends AppCompatActivity {
 
     private void InicializarControles() {
 
-        lista=(ListView)findViewById(R.id.listview);
+        lista=(ListView)findViewById(R.id.listview2);
 
         this.LoadListView();
     }
 
     private void LoadListView() {
 
-        //RecetasBDHelper admin = new RecetasBDHelper(this, "users", null, 1);
-        //SQLiteDatabase BaseDeDatos = admin.getReadableDatabase();
+        RecetasBDHelper admin = new RecetasBDHelper(this, "users", null, 1);
+        SQLiteDatabase BaseDeDatos = admin.getReadableDatabase();
 
-        List<Nombre2> nomb = new ArrayList<Nombre2>();
+        List<Nombre2> nomb = new ArrayList<>();
 
-        //Cursor cursor = BaseDeDatos.rawQuery
-          //      ("select name,like_recipe, dislike_recipe from fav_recipes", null);
+        Cursor cursor = BaseDeDatos.rawQuery
+              ("select name,like_recipe, dislike_recipe from fav_recipe", null);
 
-        //if (cursor.moveToFirst()) {
+        if (cursor.moveToFirst()) {
 
-          //  do {
+           do {
 
-            //    Nombre2 name = new Nombre2(
-                    //    cursor.getString(0),
-                  //      cursor.getString(1),
-                //        cursor.getString(2)
-              //  );
+               Nombre2 todo = new Nombre2(
+                       cursor.getString(0),
+                      cursor.getString(1),
+                       cursor.getString(2)
+        );
 
-                //nomb.add(name);
-           // } while (cursor.moveToNext());
-        //}
-
-        nomb.add(new Nombre2("receta 1", "si", "no"));
+                nomb.add(todo);
+           } while (cursor.moveToNext());
+        }
 
         listview_adapter2 adapter = new  listview_adapter2(this, nomb);
         lista.setAdapter(adapter);
