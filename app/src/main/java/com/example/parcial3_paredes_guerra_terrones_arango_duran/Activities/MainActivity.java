@@ -45,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
             //se añadio los usuarios a la BD
             db.execSQL("INSERT INTO users (name, email, password, type)" + "VALUES ('zamora','zamora@example.com','123','Administrador')");
             db.execSQL("INSERT INTO users (name, email, password, type)" + "VALUES ('elfo','elfo@example.com','123','Normal')");
-
+            db.execSQL("INSERT INTO recipes (name, description, ingredients, restaurant, comments)" + "VALUES ('hamborguesa','cuadrada','pan carne queso y salsas','mcquetedandonals', 'jaja muy good')");
+            db.execSQL("INSERT INTO fav_recipe (id_user, id_recipes)" + "VALUES (0,0)");
             /*KIRIAM
             if(db != null) {
                 db.execSQL("INSERT INTO users (name, email, password, type)" + "VALUES ('zamora','zamora@example.com','123','Administrador')");
