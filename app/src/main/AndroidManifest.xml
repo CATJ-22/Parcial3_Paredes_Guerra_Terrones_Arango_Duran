@@ -11,11 +11,12 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Activities.Lista_recetaActivity"></activity>
         <activity android:name=".Activities.RecetasGuardasActivity"></activity>
+        <activity android:name=".Activities.Agregar_RecetasActivity"></activity>
         <activity android:name=".Activities.MenuActivity" />
         <activity android:name=".Activities.LoginActivity" />
         <activity android:name=".Activities.MainActivity">
 
-            <!-- <activity android:name=".Activities.Agregar_RecetasActivity"> -->
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

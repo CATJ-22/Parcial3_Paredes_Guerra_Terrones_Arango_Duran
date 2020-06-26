@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
             //se añadio los usuarios a la BD
             db.execSQL("INSERT INTO users (name, email, password, type)" + "VALUES ('zamora','zamora@example.com','123','Administrador')");
             db.execSQL("INSERT INTO users (name, email, password, type)" + "VALUES ('elfo','elfo@example.com','123','Normal')");
+
             /*KIRIAM
             if(db != null) {
                 db.execSQL("INSERT INTO users (name, email, password, type)" + "VALUES ('zamora','zamora@example.com','123','Administrador')");

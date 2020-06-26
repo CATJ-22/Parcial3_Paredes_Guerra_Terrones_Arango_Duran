@@ -2,12 +2,9 @@ package com.example.parcial3_paredes_guerra_terrones_arango_duran.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.parcial3_paredes_guerra_terrones_arango_duran.BD.RecetasBDHelper;
 import com.example.parcial3_paredes_guerra_terrones_arango_duran.R;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
