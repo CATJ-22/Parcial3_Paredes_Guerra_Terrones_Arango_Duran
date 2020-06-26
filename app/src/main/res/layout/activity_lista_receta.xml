@@ -11,23 +11,9 @@
 
     <ListView
         android:id="@+id/listview_lista_receta"
-        android:layout_width="409dp"
-        android:layout_height="597dp"
-        tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="0dp" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-    <Button
-        android:id="@+id/btt_Actualizar"
-        android:layout_width="135dp"
-        android:layout_height="49dp"
-        android:onClick="Actualizar"
-        android:text="Actualizar"
-        android:background="@drawable/button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listview_lista_receta"
-        app:layout_constraintVertical_bias="0.569" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
