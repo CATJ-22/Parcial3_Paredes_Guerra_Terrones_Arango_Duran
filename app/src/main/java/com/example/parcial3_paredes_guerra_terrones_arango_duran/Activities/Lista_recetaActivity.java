@@ -11,6 +11,7 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.parcial3_paredes_guerra_terrones_arango_duran.Adaptadores.listview_adapter;
+import com.example.parcial3_paredes_guerra_terrones_arango_duran.Adaptadores.listview_receta;
 import com.example.parcial3_paredes_guerra_terrones_arango_duran.BD.RecetasBDHelper;
 import com.example.parcial3_paredes_guerra_terrones_arango_duran.Entidades.Nombre;
 import com.example.parcial3_paredes_guerra_terrones_arango_duran.R;
@@ -27,39 +28,35 @@ public class Lista_recetaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_receta);
 
-        this.initializeControls();
-    }
-
-    public void initializeControls(){
-
         lista_receta=(ListView)findViewById(R.id.listview_lista_receta);
         this.LoadListView();
     }
 
+
     private void LoadListView() {
 
-        RecetasBDHelper admin = new RecetasBDHelper(this, "users", null, 1);
+        RecetasBDHelper admin = new RecetasBDHelper(this, "Recipes", null, 1);
         SQLiteDatabase BaseDeDatos = admin.getReadableDatabase();
 
         List<Nombre> nom = new ArrayList<Nombre>();
 
         Cursor cursor = BaseDeDatos.rawQuery
-                ("select name from recipes", null);
+                ("select name,restaurant from recipes", null);
 
         if (cursor.moveToFirst()) {
 
             do {
+
                 Nombre name = new Nombre(
-                        cursor.getString(0)
+                        cursor.getString(0),
+                        cursor.getString(1)
                 );
 
                 nom.add(name);
             } while (cursor.moveToNext());
         }
 
-        BaseDeDatos.close();
-
-        listview_adapter adapter = new listview_adapter(this, nom);
+        listview_receta adapter = new listview_receta(this, nom);
         lista_receta.setAdapter(adapter);
 
         lista_receta.setOnItemClickListener(new AdapterView.OnItemClickListener() {

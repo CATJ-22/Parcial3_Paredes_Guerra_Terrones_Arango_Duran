@@ -78,8 +78,6 @@ public class LoginActivity extends AppCompatActivity {
                            //i.putExtra("password",user_pass);
                             i.putExtra("type",user_type);
                             startActivity(i);
-                        }else{
-                            Toast.makeText(getApplicationContext(), "ERROR NO SON COMPATIBLES", Toast.LENGTH_SHORT).show();
                         }
 
                     }while (c.moveToNext()); //mover a la siguiente linea
