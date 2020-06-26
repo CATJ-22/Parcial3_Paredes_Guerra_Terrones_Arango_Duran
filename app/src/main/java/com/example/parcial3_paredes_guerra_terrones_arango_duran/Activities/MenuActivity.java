@@ -27,6 +27,7 @@ public class MenuActivity extends AppCompatActivity {
         btnreceguard=(Button)findViewById(R.id.btn_recetas_guardadas);
         Toast.makeText(getApplicationContext(), "Bienvenido "+ name, Toast.LENGTH_LONG).show();
         //validacion de visibilidad para botones por tipo de usuario
+
         if(tipo.equalsIgnoreCase("normal")){
             btnaddrecipe.setVisibility(View.INVISIBLE);
         }
@@ -53,6 +54,8 @@ public class MenuActivity extends AppCompatActivity {
     //AGREGAR RECETAS
     public void AddRecipes (View view){
         Intent i = new Intent(MenuActivity.this, Agregar_RecetasActivity.class);
+        i.putExtra("type", tipo);
+        i.putExtra("nom", name);
         startActivity(i);
 
     }

@@ -85,11 +85,19 @@ public class Agregar_RecetasActivity extends AppCompatActivity {
         else
             a++;
 
-        if(a==5)
+        if(a==5) {
             saveRecipe();
+            String tipo = getIntent().getStringExtra("type"), name = getIntent().getStringExtra("nom");
+            Intent i = new Intent(this, MenuActivity.class);
+            i.putExtra("type", tipo);
+            i.putExtra("nom", name);
+            startActivity(i);
+        }
         else
             a=0;
     }
+
+
 
     //Metodo para salvar receta.
     public void saveRecipe(){
@@ -116,8 +124,6 @@ public class Agregar_RecetasActivity extends AppCompatActivity {
                 db.insert("recipes", null, values);
                 Toast.makeText(this, "Datos Insertados Correctamente", Toast.LENGTH_SHORT).show();
 
-                Intent i = new Intent(getApplicationContext(), MenuActivity.class);
-                startActivity(i);
 
             }
         }catch (Exception e){
