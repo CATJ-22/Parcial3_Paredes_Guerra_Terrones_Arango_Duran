@@ -22,6 +22,7 @@
         android:layout_height="49dp"
         android:onClick="Actualizar"
         android:text="Actualizar"
+        android:background="@drawable/button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
