@@ -1,17 +1,11 @@
 package com.example.parcial3_paredes_guerra_terrones_arango_duran.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ListView;
-
 import com.example.parcial3_paredes_guerra_terrones_arango_duran.Adaptadores.listview_adapter;
-import com.example.parcial3_paredes_guerra_terrones_arango_duran.Entidades.Recipes;
+import com.example.parcial3_paredes_guerra_terrones_arango_duran.Entidades.Nombre;
 import com.example.parcial3_paredes_guerra_terrones_arango_duran.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,16 +30,12 @@ public class RecetasGuardasActivity extends AppCompatActivity {
 
     private void LoadListView() {
 
-        List<Recipes> receta = new ArrayList<Recipes>();
+        List<Nombre> nom = new ArrayList<Nombre>();
 
+        nom.add(new Nombre("HOLA"));
 
-        //receta.add(new Recipes("Receta 1", "", "", "", "", "", ""));
-
-        listview_adapter adapter= new listview_adapter(getApplicationContext(), receta);
+        listview_adapter adapter= new listview_adapter(this, nom);
         lista.setAdapter(adapter);
-
-
-        //hola
 
     }
 
