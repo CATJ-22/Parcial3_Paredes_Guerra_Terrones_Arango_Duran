@@ -6,6 +6,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +30,7 @@ public class Lista_recetaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lista_receta);
 
         lista_receta=(ListView)findViewById(R.id.listview_lista_receta);
+
         this.LoadListView();
     }
 
@@ -69,7 +71,5 @@ public class Lista_recetaActivity extends AppCompatActivity {
             }
         });
     }
-    public void Actualizar(View view){
 
-    }
 }
