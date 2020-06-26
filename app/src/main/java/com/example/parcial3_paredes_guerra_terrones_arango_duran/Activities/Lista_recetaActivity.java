@@ -35,7 +35,7 @@ public class Lista_recetaActivity extends AppCompatActivity {
 
     private void LoadListView() {
 
-        RecetasBDHelper admin = new RecetasBDHelper(this, "Recipes", null, 1);
+        RecetasBDHelper admin = new RecetasBDHelper(this, "users", null, 1);
         SQLiteDatabase BaseDeDatos = admin.getReadableDatabase();
 
         List<Nombre> nom = new ArrayList<Nombre>();
