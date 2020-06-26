@@ -20,7 +20,7 @@ public class MostrarActivity extends AppCompatActivity {
 
     Button fav, delete;
     TextView nombre, descrip, restaurante, comentario,ingredientes; //imagen,
-    int receta;
+    int receta=0,pos=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,7 +28,7 @@ public class MostrarActivity extends AppCompatActivity {
         setContentView(R.layout.activity_mostrar);
 
         this.InicializarControles();
-
+        this.MostrarReceta();
         String tipo=getIntent().getStringExtra("TIPO");
 
         if(tipo.equalsIgnoreCase("administrador")){
@@ -42,7 +42,6 @@ public class MostrarActivity extends AppCompatActivity {
 
         fav = (Button) findViewById(R.id.boton_agregar);
         delete = (Button) findViewById(R.id.boton_eliminar);
-
         nombre = (TextView) findViewById(R.id.txt_name_receta);
         descrip = (TextView) findViewById(R.id.txt_descri_receta);
         restaurante = (TextView) findViewById(R.id.txt_resta_receta);
@@ -50,13 +49,13 @@ public class MostrarActivity extends AppCompatActivity {
        // imagen = (TextView) findViewById(R.id.txt_imagen_receta);
         ingredientes = (TextView) findViewById(R.id.txt_ingre_receta);
 
-        this.MostrarReceta();
+
 
     }
 
     private void MostrarReceta() {
 
-        int pos = getIntent().getIntExtra("RECETA", 0);
+        pos = getIntent().getIntExtra("RECETA", 0);
 
         RecetasBDHelper admin = new RecetasBDHelper(this, "users", null, 1);
         SQLiteDatabase BaseDeDatos = admin.getReadableDatabase();
@@ -98,7 +97,7 @@ public class MostrarActivity extends AppCompatActivity {
 
 
         Intent i = new Intent(view.getContext(), GustoActivity.class);
-        int pos = getIntent().getIntExtra("RECETA", 0);
+        pos = getIntent().getIntExtra("RECETA", 0);
         i.putExtra("Receta", pos);
         startActivity(i);
 
@@ -106,20 +105,19 @@ public class MostrarActivity extends AppCompatActivity {
 
     public void Eliminar(View view){
 
-        int posi=getIntent().getIntExtra("RECETA", 0);
+
 
         RecetasBDHelper admin = new RecetasBDHelper(this, "users", null, 1);
-        SQLiteDatabase BaseDeDatos = admin.getReadableDatabase();
+        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
         Cursor cursor = BaseDeDatos.rawQuery
-                ("delete from recipes where id_recipes='" + posi + "'", null);
-
+                ("delete from recipes where id_recipes='" + pos + "'", null);
+        cursor.moveToFirst();
         BaseDeDatos.close();
 
         Intent i = new Intent(this, Lista_recetaActivity.class);
         startActivity(i);
 
-        //borra pero al segundo intente cierra la app
         }
 
     }
