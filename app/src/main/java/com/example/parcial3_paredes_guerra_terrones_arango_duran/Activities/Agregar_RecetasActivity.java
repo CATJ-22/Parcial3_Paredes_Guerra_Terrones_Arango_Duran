@@ -116,8 +116,8 @@ public class Agregar_RecetasActivity extends AppCompatActivity {
                 db.insert("recipes", null, values);
                 Toast.makeText(this, "Datos Insertados Correctamente", Toast.LENGTH_SHORT).show();
 
-                Intent i = new Intent(getApplicationContext(), MenuActivity.class);
-                startActivity(i);
+                //Intent i = new Intent(getApplicationContext(), MenuActivity.class);
+                //startActivity(i);
 
             }
         }catch (Exception e){

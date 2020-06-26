@@ -32,7 +32,7 @@ public class RecetasGuardasActivity extends AppCompatActivity {
 
         List<Nombre> nom = new ArrayList<Nombre>();
 
-        nom.add(new Nombre("HOLA"));
+        //nom.add(new Nombre("HOLA"));
 
         listview_adapter adapter= new listview_adapter(this, nom);
         lista.setAdapter(adapter);
