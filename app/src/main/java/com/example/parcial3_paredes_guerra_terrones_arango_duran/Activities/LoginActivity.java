@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,9 +41,17 @@ public class LoginActivity extends AppCompatActivity {
             String namepuesto= txtname.getText().toString();
             String passwordpuesto= txtpassword.getText().toString();
 
-            if(namepuesto.equals("") && passwordpuesto.equals("")){
+            if(namepuesto.equals("") && passwordpuesto.equals(""))
                 Toast.makeText(getApplicationContext(), "Por favor llene el Formulario", Toast.LENGTH_SHORT).show();
+            if(TextUtils.isEmpty(txtname.getText().toString())){
+                txtname.setError("Porfavor ingrese su usuario.");
+                Toast.makeText(getApplicationContext(), "USUARIO ESTA VACIO!", Toast.LENGTH_SHORT).show();
             }
+            if(TextUtils.isEmpty(txtpassword.getText().toString())){
+                txtpassword.setError("Porfavor ingrese su contraseña ");
+                Toast.makeText(getApplicationContext(), "CONTRASEÑA ESTA VACIA!", Toast.LENGTH_SHORT).show();
+            }
+
 
             // SE LLAMA LA BASE DE DATOS CREADA
             RecetasBDHelper smDB = new RecetasBDHelper(this, "users", null,1);
@@ -69,6 +78,8 @@ public class LoginActivity extends AppCompatActivity {
                            //i.putExtra("password",user_pass);
                             i.putExtra("type",user_type);
                             startActivity(i);
+                        }else{
+                            Toast.makeText(getApplicationContext(), "ERROR NO SON COMPATIBLES", Toast.LENGTH_SHORT).show();
                         }
 
                     }while (c.moveToNext()); //mover a la siguiente linea

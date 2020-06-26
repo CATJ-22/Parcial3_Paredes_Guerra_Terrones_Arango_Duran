@@ -9,7 +9,7 @@ import com.example.parcial3_paredes_guerra_terrones_arango_duran.R;
 public class RecetasBDHelper extends SQLiteOpenHelper {
 
     String tableUsers = "CREATE TABLE users(id_user INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT, email TEXT, password TEXT, type TEXT)";
-    String tableRecipes = "CREATE TABLE recipes( id_recipes INTEGER PRIMARY KEY AUTOINCREMENT, id_user INTEGER, name TEXT, description TEXT, ingredients TEXT, restaurant TEXT, comments TEXT, image TEXT)";
+    String tableRecipes = "CREATE TABLE recipes( id_recipes INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, description TEXT, ingredients TEXT, restaurant TEXT, comments TEXT, image TEXT)";
     String tableFav_recipe = "CREATE TABLE fav_recipe(id_user INTEGER, id_recipes INTEGER, PRIMARY KEY (id_user, id_recipes), FOREIGN KEY (id_user) REFERENCES users(id_user),FOREIGN KEY (id_recipes) REFERENCES recipes(id_recipes))";
     public RecetasBDHelper(Context context, String nombre, SQLiteDatabase.CursorFactory cursorFactory, int version) {
        super(context, nombre, cursorFactory, R.integer.DBVersion);
