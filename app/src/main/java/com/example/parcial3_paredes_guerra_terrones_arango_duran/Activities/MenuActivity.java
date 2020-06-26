@@ -37,13 +37,14 @@ public class MenuActivity extends AppCompatActivity {
     //RECETAS DISPONIBLES
     public void Recipes (View view){
         Intent i = new Intent(MenuActivity.this,Lista_recetaActivity.class);
+        i.putExtra("type", tipo);
         startActivity(i);
     }
 
     //GUARDAR RECETAS
     public void SaveRecipes (View view){
         Intent i = new Intent(MenuActivity.this, RecetasGuardasActivity.class);
-        i.putExtra("type", tipo);
+
         startActivity(i);
     }
 

@@ -6,16 +6,13 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.parcial3_paredes_guerra_terrones_arango_duran.Adaptadores.listview_adapter;
 import com.example.parcial3_paredes_guerra_terrones_arango_duran.BD.RecetasBDHelper;
 import com.example.parcial3_paredes_guerra_terrones_arango_duran.Entidades.Nombre;
-import com.example.parcial3_paredes_guerra_terrones_arango_duran.MostrarActivity;
 import com.example.parcial3_paredes_guerra_terrones_arango_duran.R;
 
 import java.util.ArrayList;
@@ -36,7 +33,6 @@ public class Lista_recetaActivity extends AppCompatActivity {
     public void initializeControls(){
 
         lista_receta=(ListView)findViewById(R.id.listview_lista_receta);
-        this.LoadListView();
     }
 
     private void LoadListView() {
@@ -67,7 +63,9 @@ public class Lista_recetaActivity extends AppCompatActivity {
         lista_receta.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent(view.getContext(), MostrarActivity.class);
-                i.putExtra("RECETA", "");
+                String tipoo=getIntent().getStringExtra("type");
+                i.putExtra("RECETA", (position+1));
+                i.putExtra("TIPO", tipoo);
                 startActivity(i);
             }
         });
