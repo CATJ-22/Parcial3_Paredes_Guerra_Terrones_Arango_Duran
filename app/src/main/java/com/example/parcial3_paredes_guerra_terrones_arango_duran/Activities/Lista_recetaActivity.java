@@ -33,6 +33,7 @@ public class Lista_recetaActivity extends AppCompatActivity {
     public void initializeControls(){
 
         lista_receta=(ListView)findViewById(R.id.listview_lista_receta);
+        this.LoadListView();
     }
 
     private void LoadListView() {

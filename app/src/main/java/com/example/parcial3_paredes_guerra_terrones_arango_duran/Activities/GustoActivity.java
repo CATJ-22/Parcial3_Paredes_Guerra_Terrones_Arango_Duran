@@ -44,7 +44,7 @@ public class GustoActivity extends AppCompatActivity {
 
     private void AgregarFAV() {
 
-
+        String gustoo="", iguall="";
 
         int pos = getIntent().getIntExtra("Receta", 0);
 
@@ -63,18 +63,8 @@ public class GustoActivity extends AppCompatActivity {
 
         }
 
-
-    }
-
-    public void Guardar(View view){
-
-        String gustoo="", iguall="";
-
-        //RecetasBDHelper admin = new RecetasBDHelper(this, "users", null, 1);
-        //SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
-
         String[] gusto= {"ME GUSTA", "NO ME GUSTA"};
-        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, gusto);
+        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, gusto);
         spinner1.setAdapter(adaptador);
 
         String seleccion1 = spinner1.getSelectedItem().toString();
@@ -87,7 +77,7 @@ public class GustoActivity extends AppCompatActivity {
         }
 
         String[] igual= {"ES IGUAL A LA ORIGINAL", "NO ES IGUAL A LA ORIGINAL"};
-        ArrayAdapter<String> adaptador2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, igual);
+        ArrayAdapter<String> adaptador2 = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, igual);
         spinner2.setAdapter(adaptador2);
 
         String seleccion2 = spinner2.getSelectedItem().toString();
@@ -97,6 +87,18 @@ public class GustoActivity extends AppCompatActivity {
         }else{
             iguall="NO";
         }
+
+
+    }
+
+    public void Guardar(View view){
+
+
+
+        //RecetasBDHelper admin = new RecetasBDHelper(this, "users", null, 1);
+        //SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
+
+
 
         //ContentValues values = new ContentValues();
         //values.put("gusto", gustoo);
@@ -109,8 +111,8 @@ public class GustoActivity extends AppCompatActivity {
         Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT).show();
 
         Intent i = new Intent(this, Lista_recetaActivity.class);
-        i.putExtra("GUSTO", gustoo);
-        i.putExtra("IGUAL", iguall);
+        //i.putExtra("GUSTO", gustoo);
+        //i.putExtra("IGUAL", iguall);
         startActivity(i);
 
 
