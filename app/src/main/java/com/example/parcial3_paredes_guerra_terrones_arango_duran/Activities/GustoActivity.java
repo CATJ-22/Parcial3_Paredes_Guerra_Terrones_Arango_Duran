@@ -18,6 +18,8 @@ import com.example.parcial3_paredes_guerra_terrones_arango_duran.R;
 
 public class GustoActivity extends AppCompatActivity {
 
+    String gustoo="", iguall="";
+    int id_usuario=0, id_receta=0;
     Spinner spinner1, spinner2;
     TextView nombre, descrip, restaurante, ingredientes;
 
@@ -44,15 +46,13 @@ public class GustoActivity extends AppCompatActivity {
 
     private void AgregarFAV() {
 
-        String gustoo="", iguall="";
-
         int pos = getIntent().getIntExtra("Receta", 0);
 
         RecetasBDHelper admin = new RecetasBDHelper(this, "users", null, 1);
         SQLiteDatabase BaseDeDatos = admin.getReadableDatabase();
 
         Cursor cursor = BaseDeDatos.rawQuery
-                ("select name, description, ingredients, restaurant from recipes where id_recipes='" + pos + "'", null);
+                ("select id_recipes, name, description, ingredients, restaurant from recipes where id_recipes='" + pos + "'", null);
 
         if (cursor.moveToFirst()) {
 
@@ -60,7 +60,7 @@ public class GustoActivity extends AppCompatActivity {
             descrip.setText(cursor.getString(1));
             restaurante.setText(cursor.getString(2));
             ingredientes.setText(cursor.getString(3));
-
+            id_receta=cursor.getInt(4);
         }
 
         String[] gusto= {"ME GUSTA", "NO ME GUSTA"};
@@ -87,34 +87,32 @@ public class GustoActivity extends AppCompatActivity {
         }else{
             iguall="NO";
         }
-
-
     }
 
     public void Guardar(View view){
 
+        RecetasBDHelper admin = new RecetasBDHelper(this, "users", null, 1);
+        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
+        if(BaseDeDatos!=null) {
+            ContentValues values = new ContentValues();
+            values.put("id_users", id_usuario+1);
+            values.put("id_recipes", id_receta);
+            values.put("like_recipe", gustoo);
+            values.put("dislike_recipe", iguall);
 
-        //RecetasBDHelper admin = new RecetasBDHelper(this, "users", null, 1);
-        //SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
+            id_usuario++;
 
+            BaseDeDatos.insert("fav_recipe", null, values);
+            BaseDeDatos.close();
 
+            Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT).show();
 
-        //ContentValues values = new ContentValues();
-        //values.put("gusto", gustoo);
-        //values.put("igual", iguall);
-
-
-        //BaseDeDatos.insert("tableFav_recipe", null, values);
-        //BaseDeDatos.close();
-
-        Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT).show();
-
-        Intent i = new Intent(this, Lista_recetaActivity.class);
-        //i.putExtra("GUSTO", gustoo);
-        //i.putExtra("IGUAL", iguall);
-        startActivity(i);
-
+            Intent i = new Intent(this, Lista_recetaActivity.class);
+            //i.putExtra("GUSTO", gustoo);
+            //i.putExtra("IGUAL", iguall);
+            startActivity(i);
+        }
 
     }
 }

@@ -49,7 +49,6 @@ public class Lista_recetaActivity extends AppCompatActivity {
         if (cursor.moveToFirst()) {
 
             do {
-
                 Nombre name = new Nombre(
                         cursor.getString(0)
                 );
@@ -57,6 +56,8 @@ public class Lista_recetaActivity extends AppCompatActivity {
                 nom.add(name);
             } while (cursor.moveToNext());
         }
+
+        BaseDeDatos.close();
 
         listview_adapter adapter = new listview_adapter(this, nom);
         lista_receta.setAdapter(adapter);

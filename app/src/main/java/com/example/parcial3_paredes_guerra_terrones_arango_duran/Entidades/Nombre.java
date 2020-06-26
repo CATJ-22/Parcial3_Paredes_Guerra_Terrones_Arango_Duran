@@ -8,6 +8,7 @@ public class Nombre {
         Nombre=nombre;
     }
 
+
     public String getNombre() {
         return Nombre;
     }

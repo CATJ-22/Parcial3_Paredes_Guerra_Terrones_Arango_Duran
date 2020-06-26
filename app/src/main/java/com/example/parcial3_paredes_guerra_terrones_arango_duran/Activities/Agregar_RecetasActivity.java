@@ -101,7 +101,7 @@ public class Agregar_RecetasActivity extends AppCompatActivity {
             String restaurante=restaurant.getText().toString();
             String comentario=comments.getText().toString();
 
-            RecetasBDHelper Datos = new RecetasBDHelper(getApplicationContext(), "Recipes",null, R.integer.DBVersion);
+            RecetasBDHelper Datos = new RecetasBDHelper(getApplicationContext(), "users",null, R.integer.DBVersion);
             SQLiteDatabase db = Datos.getWritableDatabase();
 
             if(db != null){
