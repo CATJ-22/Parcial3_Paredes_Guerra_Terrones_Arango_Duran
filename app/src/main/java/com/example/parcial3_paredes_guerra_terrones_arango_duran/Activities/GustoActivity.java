@@ -18,6 +18,7 @@ import com.example.parcial3_paredes_guerra_terrones_arango_duran.R;
 
 public class GustoActivity extends AppCompatActivity {
 
+    String nom="";
     String gustoo="", iguall="";
     int id_usuario=0, id_receta=0;
     Spinner spinner1, spinner2;
@@ -56,11 +57,14 @@ public class GustoActivity extends AppCompatActivity {
 
         if (cursor.moveToFirst()) {
 
-            nombre.setText(cursor.getString(0));
-            descrip.setText(cursor.getString(1));
-            restaurante.setText(cursor.getString(2));
-            ingredientes.setText(cursor.getString(3));
-            id_receta=cursor.getInt(4);
+            id_receta=cursor.getInt(0);
+            nombre.setText(cursor.getString(1));
+            descrip.setText(cursor.getString(2));
+            restaurante.setText(cursor.getString(3));
+            ingredientes.setText(cursor.getString(4));
+
+            String nom=cursor.getString(1);
+
         }
 
         String[] gusto= {"ME GUSTA", "NO ME GUSTA"};
@@ -96,12 +100,11 @@ public class GustoActivity extends AppCompatActivity {
 
         if(BaseDeDatos!=null) {
             ContentValues values = new ContentValues();
-            values.put("id_users", id_usuario+1);
+
+            values.put("name", nom);
             values.put("id_recipes", id_receta);
             values.put("like_recipe", gustoo);
             values.put("dislike_recipe", iguall);
-
-            id_usuario++;
 
             BaseDeDatos.insert("fav_recipe", null, values);
             BaseDeDatos.close();
@@ -109,8 +112,8 @@ public class GustoActivity extends AppCompatActivity {
             Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT).show();
 
             Intent i = new Intent(this, Lista_recetaActivity.class);
-            //i.putExtra("GUSTO", gustoo);
-            //i.putExtra("IGUAL", iguall);
+            i.putExtra("GUSTO", gustoo);
+            i.putExtra("IGUAL", iguall);
             startActivity(i);
         }
 

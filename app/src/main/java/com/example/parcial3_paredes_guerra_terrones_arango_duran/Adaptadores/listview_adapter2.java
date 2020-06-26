@@ -32,10 +32,13 @@ public class listview_adapter2 extends ArrayAdapter<Nombre2> {
         LayoutInflater inflater = LayoutInflater.from(getContext());
         View item = inflater.inflate(R.layout.listview_list2, null);
 
-        TextView like = (TextView)item.findViewById(R.id.txt_like);
+        TextView nom = (TextView)item.findViewById(R.id.txt_name_guarda);
+        nom.setText(opcion.get(position).getName());
+
+        TextView like = (TextView)item.findViewById(R.id.txt_gusto_guarda);
         like.setText(opcion.get(position).getLike());
 
-        TextView dislike = (TextView)item.findViewById(R.id.txt_dislike);
+        TextView dislike = (TextView)item.findViewById(R.id.txt_igual_guarda);
         dislike.setText(opcion.get(position).getDislike());
 
         return (item);

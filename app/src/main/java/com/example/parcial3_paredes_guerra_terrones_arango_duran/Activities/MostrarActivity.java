@@ -65,15 +65,12 @@ public class MostrarActivity extends AppCompatActivity {
 
         if (cursor.moveToFirst()) {
 
-            nombre.setText(cursor.getString(0));
-            descrip.setText(cursor.getString(1));
-            restaurante.setText(cursor.getString(2));
-            comentario.setText(cursor.getString(3));
-            //imagen.setText(cursor.getString(4));
-            ingredientes.setText(cursor.getString(4));
-
-
-            receta=cursor.getInt(5);
+            receta=cursor.getInt(0);
+            nombre.setText(cursor.getString(1));
+            descrip.setText(cursor.getString(2));
+            restaurante.setText(cursor.getString(3));
+            comentario.setText(cursor.getString(4));
+            ingredientes.setText(cursor.getString(5));
 
         }
     }
@@ -104,8 +101,6 @@ public class MostrarActivity extends AppCompatActivity {
     }
 
     public void Eliminar(View view){
-
-
 
         RecetasBDHelper admin = new RecetasBDHelper(this, "users", null, 1);
         SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();

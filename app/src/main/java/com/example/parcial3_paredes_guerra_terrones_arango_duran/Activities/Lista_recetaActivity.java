@@ -6,12 +6,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.parcial3_paredes_guerra_terrones_arango_duran.Adaptadores.listview_adapter;
 import com.example.parcial3_paredes_guerra_terrones_arango_duran.Adaptadores.listview_receta;
 import com.example.parcial3_paredes_guerra_terrones_arango_duran.BD.RecetasBDHelper;
 import com.example.parcial3_paredes_guerra_terrones_arango_duran.Entidades.Nombre;
