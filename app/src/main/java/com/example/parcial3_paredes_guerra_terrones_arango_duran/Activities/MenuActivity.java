@@ -26,24 +26,13 @@ public class MenuActivity extends AppCompatActivity {
         tipo = getIntent().getStringExtra("type");
         btnaddrecipe=(Button)findViewById(R.id.btn_agregar_recipes);
         btnreceguard=(Button)findViewById(R.id.btn_recetas_guardadas);
-
-        /*try{
-            RecetasBDHelper Datos = new RecetasBDHelper(getApplicationContext(), "Users",null, R.integer.DBVersion);
-            SQLiteDatabase db = Datos.getReadableDatabase();
-            Cursor c = db.rawQuery(" SELECT type FROM Users WHERE name='"+name+"'", null);
-
-            if(c.moveToFirst()){
-                tipo = c.getString(0);
-            }
-
-        }catch (Exception e){
-            Toast.makeText(getApplicationContext(),"Errorsote: "+e.getMessage(),Toast.LENGTH_LONG).show();
-        }*/
-        Toast.makeText(getApplicationContext(),tipo,Toast.LENGTH_LONG).show();
-
-        if(tipo.equals("normal")){
+        Toast.makeText(getApplicationContext(), "Bienvenido "+ name, Toast.LENGTH_LONG).show();
+        //validacion de visibilidad para botones por tipo de usuario
+        if(tipo.equalsIgnoreCase("normal")){
             btnaddrecipe.setVisibility(View.INVISIBLE);
-        }else if(tipo.equals("administrador")){
+        }
+
+        if(tipo.equalsIgnoreCase("administrador")){
             btnreceguard.setVisibility(View.INVISIBLE);
         }
     }

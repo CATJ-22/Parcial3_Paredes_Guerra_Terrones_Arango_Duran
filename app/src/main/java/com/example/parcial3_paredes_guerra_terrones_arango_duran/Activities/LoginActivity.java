@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
                         String user_pass = c.getString(c.getColumnIndex("password"));
 
                         if(user_name.equals(namepuesto) && user_pass.equals(passwordpuesto)){
-                            Toast.makeText(getApplicationContext(), "Bienvenido "+ user_name, Toast.LENGTH_LONG).show();
+
                             Intent i = new Intent(this, MenuActivity.class);
                             i.putExtra("nom", namepuesto);
                            //i.putExtra("password",user_pass);
