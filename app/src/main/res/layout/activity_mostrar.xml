@@ -18,12 +18,12 @@
         android:id="@+id/txt_descri_receta"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
         android:layout_marginTop="16dp"
         android:text="TextView"
+        android:background="#E2F8F8F8"
         android:textColor="#000000"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_name_receta" />
 
@@ -31,12 +31,12 @@
         android:id="@+id/txt_come_receta"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
         android:layout_marginTop="12dp"
         android:text="TextView"
         android:textColor="#000000"
+        android:background="#E2F8F8F8"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_resta_receta" />
 
@@ -44,12 +44,12 @@
         android:id="@+id/txt_imagen_receta"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
         android:layout_marginTop="16dp"
         android:text="TextView"
+        android:background="#E2F8F8F8"
         android:textColor="#000000"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_come_receta" />
 
@@ -57,12 +57,12 @@
         android:id="@+id/txt_ingre_receta"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
         android:layout_marginTop="16dp"
         android:text="TextView"
+        android:background="#E2F8F8F8"
         android:textColor="#000000"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_descri_receta" />
 
@@ -70,12 +70,12 @@
         android:id="@+id/txt_resta_receta"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
         android:layout_marginTop="24dp"
         android:text="TextView"
+        android:background="#E2F8F8F8"
         android:textColor="#000000"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_ingre_receta" />
 
@@ -83,12 +83,12 @@
         android:id="@+id/txt_name_receta"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
         android:layout_marginTop="40dp"
         android:text="TextView"
+        android:background="#E2F8F8F8"
         android:textColor="#000000"
         android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -96,25 +96,25 @@
         android:id="@+id/boton_agregar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginLeft="120dp"
         android:layout_marginTop="44dp"
+        android:background="@drawable/button"
+        android:onClick="AgregarFav"
         android:text="Agregar a favorito"
         android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_imagen_receta"
-        android:onClick="AgregarFav"/>
+        app:layout_constraintTop_toBottomOf="@+id/txt_imagen_receta" />
 
     <Button
         android:id="@+id/boton_eliminar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="132dp"
-        android:layout_marginLeft="132dp"
-        android:layout_marginTop="32dp"
+        android:background="@drawable/button"
         android:text="Eliminar receta"
         android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/boton_agregar" />
+        app:layout_constraintBottom_toBottomOf="@+id/boton_agregar"
+        app:layout_constraintEnd_toEndOf="@+id/boton_agregar"
+        app:layout_constraintStart_toStartOf="@+id/boton_agregar"
+        app:layout_constraintTop_toTopOf="@+id/boton_agregar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
