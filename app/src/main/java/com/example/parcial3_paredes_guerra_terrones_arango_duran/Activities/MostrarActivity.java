@@ -19,7 +19,7 @@ import com.example.parcial3_paredes_guerra_terrones_arango_duran.R;
 public class MostrarActivity extends AppCompatActivity {
 
     Button fav, delete;
-    TextView nombre, descrip, restaurante, comentario, imagen, ingredientes;
+    TextView nombre, descrip, restaurante, comentario,ingredientes; //imagen,
     int receta;
 
     @Override
@@ -47,7 +47,7 @@ public class MostrarActivity extends AppCompatActivity {
         descrip = (TextView) findViewById(R.id.txt_descri_receta);
         restaurante = (TextView) findViewById(R.id.txt_resta_receta);
         comentario = (TextView) findViewById(R.id.txt_come_receta);
-        imagen = (TextView) findViewById(R.id.txt_imagen_receta);
+       // imagen = (TextView) findViewById(R.id.txt_imagen_receta);
         ingredientes = (TextView) findViewById(R.id.txt_ingre_receta);
 
         this.MostrarReceta();
@@ -62,7 +62,7 @@ public class MostrarActivity extends AppCompatActivity {
         SQLiteDatabase BaseDeDatos = admin.getReadableDatabase();
 
         Cursor cursor = BaseDeDatos.rawQuery
-                ("select id_recipes, name, description, ingredients, restaurant, comments, image from recipes where id_recipes='" + pos + "'", null);
+                ("select id_recipes, name, description, ingredients, restaurant, comments from recipes where id_recipes='" + pos + "'", null);
 
         if (cursor.moveToFirst()) {
 
@@ -70,11 +70,11 @@ public class MostrarActivity extends AppCompatActivity {
             descrip.setText(cursor.getString(1));
             restaurante.setText(cursor.getString(2));
             comentario.setText(cursor.getString(3));
-            imagen.setText(cursor.getString(4));
-            ingredientes.setText(cursor.getString(5));
+            //imagen.setText(cursor.getString(4));
+            ingredientes.setText(cursor.getString(4));
 
 
-            receta=cursor.getInt(6);
+            receta=cursor.getInt(5);
 
         }
     }

@@ -41,7 +41,7 @@ public class Lista_recetaActivity extends AppCompatActivity {
         List<Nombre> nom = new ArrayList<Nombre>();
 
         Cursor cursor = BaseDeDatos.rawQuery
-                ("select name,restaurant from recipes", null);
+                ("select name,description from recipes", null);
 
         if (cursor.moveToFirst()) {
 
@@ -68,5 +68,8 @@ public class Lista_recetaActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+    }
+    public void Actualizar(View view){
+
     }
 }
