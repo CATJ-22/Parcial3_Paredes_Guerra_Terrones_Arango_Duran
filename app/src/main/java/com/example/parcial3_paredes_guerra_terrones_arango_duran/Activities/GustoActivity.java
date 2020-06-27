@@ -105,7 +105,7 @@ public class GustoActivity extends AppCompatActivity {
             values.put("name", nom);
             values.put("id_recipes", id_receta);
             values.put("like_recipe", "GUSTO: "+gustoo);
-            values.put("dislike_recipe", "IGUALA: "+iguall);
+            values.put("dislike_recipe", "IGUAL A: "+iguall);
 
             BaseDeDatos.insert("fav_recipe", null, values);
             BaseDeDatos.close();
