@@ -25,7 +25,6 @@ public class MenuActivity extends AppCompatActivity {
         tipo = getIntent().getStringExtra("type");
         btnaddrecipe=(Button)findViewById(R.id.btn_agregar_recipes);
         btnreceguard=(Button)findViewById(R.id.btn_recetas_guardadas);
-        Toast.makeText(getApplicationContext(), "Bienvenido "+ name, Toast.LENGTH_LONG).show();
         //validacion de visibilidad para botones por tipo de usuario
 
         if(tipo.equalsIgnoreCase("normal")){

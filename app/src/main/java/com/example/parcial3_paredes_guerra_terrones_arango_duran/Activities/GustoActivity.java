@@ -18,7 +18,7 @@ import com.example.parcial3_paredes_guerra_terrones_arango_duran.R;
 
 public class GustoActivity extends AppCompatActivity {
 
-    String nom="";
+    String nom="",tipo="";
     String gustoo="", iguall="";
     int id_usuario=0, id_receta=0;
     Spinner spinner1, spinner2;
@@ -28,7 +28,7 @@ public class GustoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gusto);
-
+        tipo=getIntent().getStringExtra("type");
         this.InicializarControles();
     }
 
@@ -112,7 +112,8 @@ public class GustoActivity extends AppCompatActivity {
 
             Toast.makeText(this, "REGISTRO EXITOSO", Toast.LENGTH_SHORT).show();
 
-            Intent i = new Intent(this, Lista_recetaActivity.class);
+            Intent i = new Intent(this, MenuActivity.class);
+            i.putExtra("type", tipo);
             i.putExtra("GUSTO", gustoo);
             i.putExtra("IGUAL", iguall);
             startActivity(i);

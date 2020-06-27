@@ -21,15 +21,15 @@ public class MostrarActivity extends AppCompatActivity {
     Button fav, delete;
     TextView nombre, descrip, restaurante, comentario,ingredientes; //imagen,
     int receta=0,pos=0;
-
+    String tipo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mostrar);
 
+        tipo=getIntent().getStringExtra("TIPO");
         this.InicializarControles();
         this.MostrarReceta();
-        String tipo=getIntent().getStringExtra("TIPO");
 
         if(tipo.equalsIgnoreCase("administrador")){
             fav.setVisibility(View.INVISIBLE);
@@ -88,6 +88,7 @@ public class MostrarActivity extends AppCompatActivity {
             Toast.makeText(this, "Datos Insertados Correctamente", Toast.LENGTH_SHORT).show();
 
             Intent i = new Intent(getApplicationContext(), MenuActivity.class);
+            i.putExtra("type", tipo);
             startActivity(i);
 
         }
@@ -95,6 +96,7 @@ public class MostrarActivity extends AppCompatActivity {
 
         Intent i = new Intent(view.getContext(), GustoActivity.class);
         pos = getIntent().getIntExtra("RECETA", 0);
+        i.putExtra("type", tipo);
         i.putExtra("Receta", pos);
         startActivity(i);
 
@@ -110,7 +112,16 @@ public class MostrarActivity extends AppCompatActivity {
         cursor.moveToFirst();
         BaseDeDatos.close();
 
-        Intent i = new Intent(this, Lista_recetaActivity.class);
+        RecetasBDHelper args = new RecetasBDHelper(this, "users", null, 1);
+        SQLiteDatabase bd = args.getWritableDatabase();
+
+        Cursor c = bd.rawQuery
+                ("delete from Fav_recipe where id_recipes='" + pos + "'", null);
+        c.moveToFirst();
+        bd.close();
+
+        Intent i = new Intent(this, MenuActivity.class);
+        i.putExtra("type", tipo);
         startActivity(i);
 
         }

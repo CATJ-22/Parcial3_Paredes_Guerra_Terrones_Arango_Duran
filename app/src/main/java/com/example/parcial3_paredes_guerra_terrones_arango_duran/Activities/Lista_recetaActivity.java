@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Lista_recetaActivity extends AppCompatActivity {
-
+    Integer [] a= new Integer[7];
     ListView lista_receta;
 
     @Override
@@ -28,7 +28,7 @@ public class Lista_recetaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_lista_receta);
 
         lista_receta=(ListView)findViewById(R.id.listview_lista_receta);
-
+        this.cura();
         this.LoadListView();
     }
 
@@ -63,11 +63,30 @@ public class Lista_recetaActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent i = new Intent(view.getContext(), MostrarActivity.class);
                 String tipoo=getIntent().getStringExtra("type");
-                i.putExtra("RECETA", (position+1));
+                int x = a[position];
+                i.putExtra("RECETA", x);
                 i.putExtra("TIPO", tipoo);
                 startActivity(i);
             }
         });
+    }
+
+    public void cura() {
+
+        RecetasBDHelper admin = new RecetasBDHelper(this, "users", null, R.integer.DBVersion);
+        SQLiteDatabase BaseDeDatos = admin.getReadableDatabase();
+        String[] campos = new String[]{"id_recipes"};
+
+        Cursor c = BaseDeDatos.query("recipes", campos, null, null, null, null, null);
+        int p = 0;
+        //Nos aseguramos de que existe al menos un registro
+        if (c.moveToFirst()) {
+            //Recorremos el cursor hasta que no haya más registros
+            do {
+                a[p] = c.getInt(0);
+                p++;
+            } while (c.moveToNext());
+        }
     }
 
 }
